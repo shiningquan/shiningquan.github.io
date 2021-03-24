@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="">
+  <title>从零到0的编辑器学习 | 十柠暄</title>
+  <meta name="author" content="十柠暄" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="剑三, 编辑器" />
+  
+  <meta name="description" content="2018.5.8艰难的打开了编辑器，加载了扬州地图，然后！怎么是一片蓝的啊！怎么滑滚轮都没有用啊！我的扬州呢！十几分钟后，哦，滚轮滑的不够多*(:з」∠)*艰难的调到了想要的画面，室友：“哇，这个直接截图就可以交场景作业了啊！”。我：“卧槽！对哦！我场景是照着这个做的，做的稀巴烂。我当时为什么没想到直接截图。”这大概就是傻吧……  认真的在b站找到了一个重置版编辑器的教程，还在记笔记……然后，就去">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零到0的编辑器学习">
+<meta property="og:url" content="http://example.com/2019/01/18/%E4%BB%8E%E9%9B%B6%E5%88%B00%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="十柠暄">
+<meta property="og:description" content="2018.5.8艰难的打开了编辑器，加载了扬州地图，然后！怎么是一片蓝的啊！怎么滑滚轮都没有用啊！我的扬州呢！十几分钟后，哦，滚轮滑的不够多*(:з」∠)*艰难的调到了想要的画面，室友：“哇，这个直接截图就可以交场景作业了啊！”。我：“卧槽！对哦！我场景是照着这个做的，做的稀巴烂。我当时为什么没想到直接截图。”这大概就是傻吧……  认真的在b站找到了一个重置版编辑器的教程，还在记笔记……然后，就去">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/null">
+<meta property="article:published_time" content="2019-01-18T12:36:53.000Z">
+<meta property="article:modified_time" content="2021-03-24T12:53:02.981Z">
+<meta property="article:author" content="十柠暄">
+<meta property="article:tag" content="剑三">
+<meta property="article:tag" content="编辑器">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/null">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="十柠暄" type="application/atom+xml">
+</head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">十柠暄</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/friends/"><i class="fa fa-paw"></i>好伙伴</a></li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>十柠暄</h2> <br />
+                        <span>山有木兮木有枝，心悦君兮君不知</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">从零到0的编辑器学习</h1>
+                
+                <ul class="kratos-post-meta text-center">
+                    <li><i class="fa fa-calendar"></i> 2019-01-18</li>
+                    <li><i class="fa fa-user"></i> 作者 十柠暄</li>
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~1.59K
+                        
+                        字
+                    </li>
+                    
+                </ul>
+            </header>
+            <div class="kratos-post-content">
+                <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                    本文最后编辑于 <time datetime="1616590382981"></time> 前，其中的内容可能需要更新。
+                </div>
+                
+                    <div class="kratos-post-inner-toc">
+                        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2018-5-8"><span class="toc-number">1.</span> <span class="toc-text">2018.5.8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-9-5-10%EF%BC%88%E8%A2%AB%E5%82%AC%E6%9B%B4%E4%BA%86%E6%89%A3%E8%AF%B6%E6%89%A3%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">5.9-5.10（被催更了扣诶扣）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-26-5-28%EF%BC%88%E5%BE%88%E4%B9%85%E5%BE%88%E4%B9%85%E6%B2%A1%E6%9B%B4%E6%96%B0%E4%BA%86%E6%98%AF%E4%B8%8D%E6%98%AF%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">5.26-5.28（很久很久没更新了是不是）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-9-6-10"><span class="toc-number">4.</span> <span class="toc-text">6.9-6.10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E7%9F%A5%E9%81%93%E5%87%A0%E5%8F%B7%E5%BC%80%E5%A7%8B-6-29"><span class="toc-number">5.</span> <span class="toc-text">不知道几号开始-6.29</span></a></li></ol>
+                    </div>
+                
+                <hr />
+                <h2 id="2018-5-8"><a href="#2018-5-8" class="headerlink" title="2018.5.8"></a>2018.5.8</h2><p>艰难的打开了编辑器，加载了扬州地图，然后！怎么是一片蓝的啊！怎么滑滚轮都没有用啊！我的扬州呢！十几分钟后，哦，滚轮滑的不够多*(:з」∠)*<br>艰难的调到了想要的画面，室友：“哇，这个直接截图就可以交场景作业了啊！”。我：“卧槽！对哦！我场景是照着这个做的，做的稀巴烂。我当时为什么没想到直接截图。”这大概就是傻吧……</p>
+<p><img src="/.com//1.png" alt="img"></p>
+<p>认真的在b站找到了一个重置版编辑器的教程，还在记笔记……然后，就去看动漫了emmmm角色什么的，明天再弄嘿嘿</p>
+<h2 id="5-9-5-10（被催更了扣诶扣）"><a href="#5-9-5-10（被催更了扣诶扣）" class="headerlink" title="5.9-5.10（被催更了扣诶扣）"></a>5.9-5.10（被催更了扣诶扣）</h2><p>（题外话：从选择无垢这首歌作为作业的时候，脑子里一直单曲循环这首歌，好不容易今天没有想无垢了，又开始单曲循环童话镇，谁来救救我OTZ）<br>拖延症晚期所以进展缓慢，两天时间过去了才把主要角色捏好。网上找的捏脸好多都带贴花，或者眼睛颜色是黄的啊什么的*(:з」∠)*然后就打开剑三客户端一个个的改掉。发现有些头发会有bug，服装的可选择范围又缩小了。成男的捏脸真是太难找啦！看上去都差不多，最后只能 “算了，管他和门派搭不搭，帅就行了”。<br>啊，突然发现女主长大后的脸还要重新调过（哇，要不是这篇日志我还没发现扣诶扣）<br>配图是放了一些角色进地图的样子（只是单纯的选了个位置放了进去，所以还是大张着手的样子，有个路人NPC噢）。</p>
+<p><img src="/.com//2.png" alt="img"></p>
+<h2 id="5-26-5-28（很久很久没更新了是不是）"><a href="#5-26-5-28（很久很久没更新了是不是）" class="headerlink" title="5.26-5.28（很久很久没更新了是不是）"></a>5.26-5.28（很久很久没更新了是不是）</h2><p>做好了男主女主扬州分开之后的场景，导出的avi文件真的好大啊，一个三四秒的视频可以有500m。<br>做的时候就觉得湖面有点怪怪的，想着渲染之后应该会好的吧，并没有。更新了最新版本的编辑器，看来是要把做的所有重新导出一下了，还好为了省事每个镜头都重新拖了角色进去。<br>看了看大大做的视频，开始思考要不要适当加一些镜头的运动。是不是要k帧呀，是不是还要考虑镜头移动的速度啊，好麻烦呀。陷入沉思<br>这是一个可爱的男孩子（和他的隼）以及一个可爱的女孩子（和她的扇子舞）</p>
+<p><img src="/.com//4.png" alt="img"></p>
+<p><img src="/.com//3.png" alt="img"></p>
+<h2 id="6-9-6-10"><a href="#6-9-6-10" class="headerlink" title="6.9-6.10"></a>6.9-6.10</h2><p>骨骼动画get，滥竽充数能力get<br>恭喜男配角军爷杀青，✿✿ヽ(°▽°)ノ✿<br>恭喜男嘉宾牵手女嘉宾，成功私（不）奔（是），✿✿ヽ(°▽°)ノ✿<br>不想做了，这玩意伤身体啊……心态崩了，没有配图</p>
+<h2 id="不知道几号开始-6-29"><a href="#不知道几号开始-6-29" class="headerlink" title="不知道几号开始-6.29"></a>不知道几号开始-6.29</h2><p>总算是把视频做完交掉了，剪辑了部分别人的视频拿过来用，自己做的镜头总共有26.5G，真可怕，最终从ae里导出来的avi文件有40G。无损压缩视频弄了我一下午，一方面是总是不满意压缩出来的质量，觉得太模糊了，另一方面是源文件太大了，压缩起来自然很慢。<br>记一些东西好了，说不定以后会用到呢：<br>P001,P008,P012男性NPC角色，P012是大块头的那种，肌肉男<br>P004,P005,P006女性NPC角色<br>NPC好像都没有上半身动画，只有角色动画，每次选动作的时候可以先搜索pst和st，走路是wlk，跑是run<br>小女孩，标准女，小男孩，标准男都是玩家角色<br>玩家角色里面1000-2000都是NPC的服饰，2000开始是门派校服，到2910截止，除了苍云长歌霸刀外所有的门派校服，这些门派的校服在最下面，其余需要的服饰可以在excel找，需要的颜色在偏色里调。<br>头可以选1000或1001，这样可以避免穿模和叠两个头发上去。头里面的基本不会用到，需要头发的时候在帽子里找。门派校服可以先把手，腰带，腿等选为NULL，选好衣服之后点击加载同名插件。如果穿商城衣服必须把手，腰带，腿等选为NULL，不然会穿模。<br>游戏里的表情里面有个作揖，在编辑器里好像是拱手，还有一个是书生行礼（这个有鞠躬的！）。<br>如果是搜门派动作可以搜门派拼音首字母<br>骨骼动画每动一下都要k帧<br>上下半身动画指上半身的动画，角色动画指下半身的动画（没有上下半身动画的时候就是全身动画），两个是可以叠加的<br>emmmm其他的以后如果有遇到再记吧，放一张视频的封面图好了，用的是芙蕖大大的数据（我才没有能力自己捏呢哼）</p>
+<p><img src="/.com//%5C%E4%BB%8E%E9%9B%B6%E5%88%B00%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%A6%E4%B9%A0%5C5.jpg" alt="5"></p>
+
+            </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/%E5%89%91%E4%B8%89/" rel="tag">剑三</a>, <a class="tag-none-link" href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2021-03-24</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" Markdown语法与Typora快捷键" href="/2019/01/16/Markdown语法与Typora快捷键/">&lt; 上一篇</a>
+                </div>
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" HEXO搭建踩过的坑（bu" href="/2019/01/27/HEXO搭建踩过的坑（bu/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.jpg" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar"></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2018-5-8"><span class="toc-text">2018.5.8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-9-5-10%EF%BC%88%E8%A2%AB%E5%82%AC%E6%9B%B4%E4%BA%86%E6%89%A3%E8%AF%B6%E6%89%A3%EF%BC%89"><span class="toc-text">5.9-5.10（被催更了扣诶扣）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-26-5-28%EF%BC%88%E5%BE%88%E4%B9%85%E5%BE%88%E4%B9%85%E6%B2%A1%E6%9B%B4%E6%96%B0%E4%BA%86%E6%98%AF%E4%B8%8D%E6%98%AF%EF%BC%89"><span class="toc-text">5.26-5.28（很久很久没更新了是不是）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-9-6-10"><span class="toc-text">6.9-6.10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E7%9F%A5%E9%81%93%E5%87%A0%E5%8F%B7%E5%BC%80%E5%A7%8B-6-29"><span class="toc-text">不知道几号开始-6.29</span></a></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%91%E4%B8%89/">剑三</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3/">教程文档</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E8%AE%B0/">游记</a><span class="category-list-count">1</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Markdown/" style="font-size: 0.6em;">Markdown</a> <a href="/tags/Typora/" style="font-size: 0.6em;">Typora</a> <a href="/tags/hexo/" style="font-size: 0.6em;">hexo</a> <a href="/tags/%E5%89%91%E4%B8%89/" style="font-size: 0.6em;">剑三</a> <a href="/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 0.6em;">游记</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 0.6em;">编辑器</a> <a href="/tags/%E8%B6%8A%E5%8D%97/" style="font-size: 0.6em;">越南</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2021/03/24/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/"><i class="fa  fa-book"></i> 越南五日行</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2019/01/27/HEXO%E6%90%AD%E5%BB%BA%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91%EF%BC%88bu/"><i class="fa  fa-book"></i> HEXO搭建踩过的坑（bu</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2019/01/18/%E4%BB%8E%E9%9B%B6%E5%88%B00%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%A6%E4%B9%A0/"><i class="fa  fa-book"></i> 从零到0的编辑器学习</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2019/01/16/Markdown%E8%AF%AD%E6%B3%95%E4%B8%8ETypora%E5%BF%AB%E6%8D%B7%E9%94%AE/"><i class="fa  fa-book"></i> Markdown语法与Typora快捷键</a>
+            
+          
+        
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <li><a target="_blank" rel="nofollow" href="https://weibo.com/u/5676652876"><i class="fa fa-weibo"></i></a></li>
+                        <li><a href="mailto:1914250712@qq.com"><i class="fa fa-envelope"></i></a></li>
+                        
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/shiningquan"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 十柠暄 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by 十柠暄.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+<script async src="/js/candy.min.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="">
+  <title>HEXO搭建踩过的坑（bu | 十柠暄</title>
+  <meta name="author" content="十柠暄" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="hexo" />
+  
+  <meta name="description" content="很早就想写了，为什么拖到现在呢？拖延症不行啊！╭(╯^╰)╮ 其实也不是踩过的坑，就想随便写些什么相关的，避免以后再犯（？？？ 最初是18年的3,4月份，被室友推荐了GitHub的博客，结果Git一直下不下来，后来选主题也选了很久，想要一个又简洁又好看的，带点啥装饰物最好了（？？？ Hexo的主题实在是太多啦，最后还是选定了fexo_(:з」∠)_，但是现在换成了Kratos-Rebirth，萌萌">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HEXO搭建踩过的坑（bu">
+<meta property="og:url" content="http://example.com/2019/01/27/HEXO%E6%90%AD%E5%BB%BA%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91%EF%BC%88bu/index.html">
+<meta property="og:site_name" content="十柠暄">
+<meta property="og:description" content="很早就想写了，为什么拖到现在呢？拖延症不行啊！╭(╯^╰)╮ 其实也不是踩过的坑，就想随便写些什么相关的，避免以后再犯（？？？ 最初是18年的3,4月份，被室友推荐了GitHub的博客，结果Git一直下不下来，后来选主题也选了很久，想要一个又简洁又好看的，带点啥装饰物最好了（？？？ Hexo的主题实在是太多啦，最后还是选定了fexo_(:з」∠)_，但是现在换成了Kratos-Rebirth，萌萌">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/null">
+<meta property="article:published_time" content="2019-01-27T12:42:00.000Z">
+<meta property="article:modified_time" content="2021-03-24T12:45:01.411Z">
+<meta property="article:author" content="十柠暄">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/null">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="十柠暄" type="application/atom+xml">
+</head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">十柠暄</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/friends/"><i class="fa fa-paw"></i>好伙伴</a></li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>十柠暄</h2> <br />
+                        <span>山有木兮木有枝，心悦君兮君不知</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">HEXO搭建踩过的坑（bu</h1>
+                
+                <ul class="kratos-post-meta text-center">
+                    <li><i class="fa fa-calendar"></i> 2019-01-27</li>
+                    <li><i class="fa fa-user"></i> 作者 十柠暄</li>
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~1.62K
+                        
+                        字
+                    </li>
+                    
+                </ul>
+            </header>
+            <div class="kratos-post-content">
+                <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                    本文最后编辑于 <time datetime="1616589901411"></time> 前，其中的内容可能需要更新。
+                </div>
+                
+                <hr />
+                <p><del>很早就想写了，为什么拖到现在呢？拖延症不行啊！╭(╯^╰)╮</del></p>
+<p><del>其实也不是踩过的坑，就想随便写些什么相关的，避免以后再犯（？？？</del></p>
+<p>最初是18年的3,4月份，被室友推荐了GitHub的博客，结果Git一直下不下来，后来选主题也选了很久，想要一个又简洁又好看的，带点啥装饰物最好了（？？？</p>
+<p>Hexo的主题实在是太多啦，最后还是选定了fexo_(:з」∠)_，但是现在换成了Kratos-Rebirth，萌萌二次元！</p>
+<p>真正开始搭博客是今年一月份了，虽然也没写啥。毕竟没有学习，也没啥可写的。隔得时间太久所以一开始有些东西就忘记放哪了，找位置花了点时间*(:з」∠)*</p>
+<ol>
+<li>透明ico是可以做的！拿一张背景透明的png找在线网站转就好了。一定要png，因为jpg导出的时候背景会自动变成白色的</li>
+<li>有些东西不能随便删，因为不知道写这个主题的人在哪里用了这些东西emmmm，删了可能会出错，true改成false就好啦。PS：Git Bash的报错还是得认真看看的ovo</li>
+<li>最上面的title，date，categories等等，冒号后面是要有个空格的，不然会凉</li>
+<li>markdown是不会给你多空行的！想要两个段落之间有一定的距离，需要加上<code>&lt;/br&gt;</code></li>
+</ol>
+<p>👆如果想到什么再补充叭</p>
+<p>👇记一下git的命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init [folder]</span><br></pre></td></tr></table></figure>
+
+<p>新建一个网站。如果没有设置<code>folder</code>，Hexo默认在目前的文件夹建立网站。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>新建一篇文章。如果没有设置<code>layout</code>的话，默认使用_config.yml中的<code>default_layout</code>参数代替。如果标题包含空格的话，请使用引号括起来。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+
+<p>生成静态文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>文件生成后立即部署网站</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo watch</span><br><span class="line">$ hexo w</span><br></pre></td></tr></table></figure>
+
+<p>监视文件变动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
+<p>发表草稿</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>启动服务器。默认情况下，访问网址为：<code>http://localhost:4000/</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo port</span><br><span class="line">$ hexo p</span><br></pre></td></tr></table></figure>
+
+<p>重设端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo static</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>只使用静态文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo log</span><br><span class="line">$ hexo l</span><br></pre></td></tr></table></figure>
+
+<p>启动日记记录，使用覆盖记录格式</p>
+<p><code>$ hexo render &lt;file1&gt; [file2] ...</code><br>渲染文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo output</span><br><span class="line">$ hexo o</span><br></pre></td></tr></table></figure>
+
+<p>设置输出路径<br><code>$ hexo migrate &lt;type&gt;</code><br>从其他博客系统迁移内容</p>
+<p><code>$ hexo clean</code><br>清除缓存文件 (db.json) 和已生成的静态文件 (public)。</p>
+<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
+<p><code>$ hexo list &lt;type&gt;</code><br>列出网站资料</p>
+<p><code>$ hexo version</code><br>显示 Hexo 版本</p>
+<p><code>$ hexo --safe</code><br>在安全模式下，不会载入插件和脚本。当您在安装新插件遭遇问题时，可以尝试以安全模式重新执行。</p>
+<p><code>$ hexo --debug</code><br>在终端中显示调试信息并记录到<code>debug.log</code>。当您碰到问题时，可以尝试用调试模式重新执行一次，并提交调试信息到 GitHub。</p>
+<p><code>$ hexo --silent</code><br>隐藏终端信息。</p>
+<p><code>$ hexo --config custom.yml</code><br>自定义配置文件的路径，执行后将不再使用<code>_config.yml</code>。</p>
+<p><code>$ hexo --draft</code><br>显示<code>source/_drafts</code>文件夹中的草稿文章。<br><code>$ hexo --cwd /path/to/cwd</code><br>自定义当前工作目录（Current working directory）的路径。</p>
+
+            </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/hexo/" rel="tag">hexo</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2021-03-24</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" 从零到0的编辑器学习" href="/2019/01/18/从零到0的编辑器学习/">&lt; 上一篇</a>
+                </div>
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" 越南五日行" href="/2021/03/24/越南五日行/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.jpg" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%91%E4%B8%89/">剑三</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3/">教程文档</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E8%AE%B0/">游记</a><span class="category-list-count">1</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Markdown/" style="font-size: 0.6em;">Markdown</a> <a href="/tags/Typora/" style="font-size: 0.6em;">Typora</a> <a href="/tags/hexo/" style="font-size: 0.6em;">hexo</a> <a href="/tags/%E5%89%91%E4%B8%89/" style="font-size: 0.6em;">剑三</a> <a href="/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 0.6em;">游记</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 0.6em;">编辑器</a> <a href="/tags/%E8%B6%8A%E5%8D%97/" style="font-size: 0.6em;">越南</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2021/03/24/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/"><i class="fa  fa-book"></i> 越南五日行</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2019/01/27/HEXO%E6%90%AD%E5%BB%BA%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91%EF%BC%88bu/"><i class="fa  fa-book"></i> HEXO搭建踩过的坑（bu</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2019/01/18/%E4%BB%8E%E9%9B%B6%E5%88%B00%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%A6%E4%B9%A0/"><i class="fa  fa-book"></i> 从零到0的编辑器学习</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2019/01/16/Markdown%E8%AF%AD%E6%B3%95%E4%B8%8ETypora%E5%BF%AB%E6%8D%B7%E9%94%AE/"><i class="fa  fa-book"></i> Markdown语法与Typora快捷键</a>
+            
+          
+        
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <li><a target="_blank" rel="nofollow" href="https://weibo.com/u/5676652876"><i class="fa fa-weibo"></i></a></li>
+                        <li><a href="mailto:1914250712@qq.com"><i class="fa fa-envelope"></i></a></li>
+                        
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/shiningquan"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 十柠暄 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by 十柠暄.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+<script async src="/js/candy.min.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>
