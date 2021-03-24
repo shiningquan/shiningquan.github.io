@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>十柠暄</title>
+  
+  <subtitle>山有木兮木有枝，心悦君兮君不知</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-03-24T12:07:41.379Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>十柠暄</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Markdown语法与Typora快捷键</title>
+    <link href="http://example.com/2019/01/16/Markdown%E8%AF%AD%E6%B3%95%E4%B8%8ETypora%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://example.com/2019/01/16/Markdown%E8%AF%AD%E6%B3%95%E4%B8%8ETypora%E5%BF%AB%E6%8D%B7%E9%94%AE/</id>
+    <published>2019-01-16T11:45:04.000Z</published>
+    <updated>2021-03-24T12:07:41.379Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><table><thead><tr><th>Markdown语法</th><th>Typora快捷键</th></tr></thead><tbody><tr><td><code># 一级标题</code></td><td>Ctrl+1：一级标题</td></tr><tr><td><code>## 二级标题</code></td><td>Ctrl+2：二级标题</td></tr><tr><td><code>### 三级标题</code></td><td>Ctrl+3：三级标题</td></tr><tr><td><code>#### 四级标题</code></td><td>Ctrl+4：四级标题</td></tr><tr><td><code>##### 五级标题</code></td><td>Ctrl+5：五级标题</td></tr><tr><td><code>###### 六级标题</code></td><td>Ctrl+6：六级标题</td></tr><tr><td></td><td>Ctrl+0：段落</td></tr></tbody></table><h2 id="粗体、斜体、删除线和下划线"><a href="#粗体、斜体、删除线和下划线" class="headerlink" title="粗体、斜体、删除线和下划线"></a>粗体、斜体、删除线和下划线</h2><table><thead><tr><th>Markdown语法</th><th>Typora快捷键</th></tr></thead><tbody><tr><td><code>*斜体*</code></td><td>Ctrl+I：斜体</td></tr><tr><td><code>**粗体**</code></td><td>Ctrl+B：粗体</td></tr><tr><td><code>***加粗斜体***</code></td><td>Ctrl+U：下划线</td></tr><tr><td><code>~~删除线~~</code></td><td>Alt+Shift+5：删除线</td></tr></tbody></table><h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><h4 id="Markdown语法："><a href="#Markdown语法：" class="headerlink" title="Markdown语法："></a>Markdown语法：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[链接文字](链接地址 &quot;链接描述&quot;)&#96;</span><br><span class="line">&#96;例如：[我的博客](https:&#x2F;&#x2F;shiningquan.github.io&#x2F; &quot;我的博客&quot;)</span><br><span class="line">&lt;链接地址&gt;&#96;</span><br><span class="line">&#96;例如：&lt;https:&#x2F;&#x2F;shiningquan.github.io&gt;</span><br></pre></td></tr></table></figure><h4 id="Typora快捷键："><a href="#Typora快捷键：" class="headerlink" title="Typora快捷键："></a>Typora快捷键：</h4><p>Ctrl+K</p><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><h4 id="Markdown语法：-1"><a href="#Markdown语法：-1" class="headerlink" title="Markdown语法："></a>Markdown语法：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 文字引用</span><br></pre></td></tr></table></figure><h4 id="Typora快捷键：-1"><a href="#Typora快捷键：-1" class="headerlink" title="Typora快捷键："></a>Typora快捷键：</h4><p>Ctrl+Shift+Q</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h4 id="Markdown语法：-2"><a href="#Markdown语法：-2" class="headerlink" title="Markdown语法："></a>Markdown语法：</h4><p>为方便起见，这是使用字符a代替反引号`</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a单行代码a</span><br><span class="line"></span><br><span class="line">aaa</span><br><span class="line">多行代码</span><br><span class="line">多行代码</span><br><span class="line">aaa</span><br></pre></td></tr></table></figure><h4 id="Typora快捷键：-2"><a href="#Typora快捷键：-2" class="headerlink" title="Typora快捷键："></a>Typora快捷键：</h4><p>Ctrl+Shift+`</p><h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><h4 id="Markdown语法：-3"><a href="#Markdown语法：-3" class="headerlink" title="Markdown语法："></a>Markdown语法：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">***</span><br></pre></td></tr></table></figure><p>以上两种方法均可以表示为分割线</p><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h4 id="Markdown语法：-4"><a href="#Markdown语法：-4" class="headerlink" title="Markdown语法："></a>Markdown语法：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*列表项</span><br><span class="line"></span><br><span class="line">-列表项</span><br><span class="line"></span><br><span class="line">+列表项</span><br></pre></td></tr></table></figure><p>以上三种方法均可以表示为列表</p><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><h4 id="Markdown语法：-5"><a href="#Markdown语法：-5" class="headerlink" title="Markdown语法："></a>Markdown语法：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">表头1|表头2</span><br><span class="line">-|-|-</span><br><span class="line">内容11|内容12</span><br><span class="line">内容21|内容22</span><br></pre></td></tr></table></figure><h4 id="Typora快捷键：-3"><a href="#Typora快捷键：-3" class="headerlink" title="Typora快捷键："></a>Typora快捷键：</h4><p>Ctrl+T</p><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><h4 id="Markdown语法：-6"><a href="#Markdown语法：-6" class="headerlink" title="Markdown语法："></a>Markdown语法：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![图片文字] (图片地址 &quot;图片描述&quot;)</span><br><span class="line">例如：![示例图片] (https:&#x2F;&#x2F;www.example.com&#x2F;example.PNG &quot;示例图片&quot;)</span><br></pre></td></tr></table></figure><h4 id="Typora快捷键：-4"><a href="#Typora快捷键：-4" class="headerlink" title="Typora快捷键："></a>Typora快捷键：</h4><p>Ctrl+Shift+I</p><h4 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h4><p>在Hexo中插入图片时，请按照以下步骤进行设置</p><p>-将站点配置文件中的<code>post_asset_folder</code>选项设置成true</p><p>-在站点文件夹中打开git bash，输入命令<code>npm install hexo-asset-image --save</code>安装插件</p><p>-此时使用<code>hexo new title</code>创建文章时，将同时在source/_post文件夹中生成一个与title同名的文件夹，我们只需将待添加的图片放进此文件夹中，然后在文章中通过Markdown语法进行引用即可。例如，在资源文件夹（就是那个与title同名的文件夹）中添加了图片example.PNG，则可以在对应的文章中使用语句<code>![示例图片](title/example.PNG &quot;示例图片&quot;)</code>添加图片</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot; title=&quot;标题&quot;&gt;&lt;/a&gt;标题&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Markdown语法&lt;/th&gt;
+&lt;th&gt;Typora快捷键&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead</summary>
+      
+    
+    
+    
+    <category term="教程文档" scheme="http://example.com/categories/%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3/"/>
+    
+    
+    <category term="Markdown" scheme="http://example.com/tags/Markdown/"/>
+    
+    <category term="Typora" scheme="http://example.com/tags/Typora/"/>
+    
+  </entry>
+  
+</feed>
