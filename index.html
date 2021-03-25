@@ -106,34 +106,43 @@
     
         
         
-            <article>
-                <div class="kratos-hentry kratos-post-inner clearfix index-post">
+            <article class="kratos-hentry clearfix">
+                <div class="kratos-entry-border-new clearfix">
+                    
                     <div class="kratos-entry-thumb-new">
                         <a href="/2019/01/27/HEXO%E6%90%AD%E5%BB%BA%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91%EF%BC%88bu/">
                             
+                                <img class="kratos-entry-thumb-new-img">
+                            
                         </a>
                     </div>
-                    <header class="kratos-entry-header">
-                        <h1 class="text-center"><a class="kratos-entry-title" href="/2019/01/27/HEXO%E6%90%AD%E5%BB%BA%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91%EF%BC%88bu/">HEXO搭建踩过的坑（bu</a></h1>
-                        
-                        <ul class="kratos-post-meta text-center">
-                            <li>
+                    <div class="kratos-post-inner-new">
+                        <header class="kratos-entry-header-new">
+                                <a class="label-link" href="/categories/%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3/">教程文档</a>
+                            <h2 class="kratos-entry-title-new"><a href="/2019/01/27/HEXO%E6%90%AD%E5%BB%BA%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91%EF%BC%88bu/">HEXO搭建踩过的坑（bu</a>
+                        </header>
+                        <div class="kratos-entry-content-new">
+                            <p>
+                                
+                                    很早就想写了，为什么拖到现在呢？拖延症不行啊！╭(╯^╰)╮
+其实也不是踩过的坑，就想随便写些什么相关的，避免以后再犯（？？？
+最初是18年的3,4月份，被室友推荐了GitHub的博客，结果Git一直下不下来，后来选主题也选了很久，想...
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <footer class="kratos-post-meta-new">
+                        <span class="pull-left">
+                            <a>
                                 <i class="fa fa-calendar"></i>
                                 2019-01-27
-                            </li>
-                            
-                                <li>
-                                    <i class="fa fa-folder"></i>
-                                    分类于
-                                    <a class="label-link" href="/categories/%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3/">教程文档</a>
-                                </li>
-                            
-                            
-                                <li>
+                            </a>
+                            <a>
+                                
                                     <i class="fa fa-tags"></i>
                                     <a class="tag-none-link" href="/tags/hexo/" rel="tag">hexo</a>
-                                </li>
-                            
+                                
+                            </a>
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
@@ -142,72 +151,10 @@
                                 <!-- 当前仅支持waline自带的统计功能 -->
                                 
                             
-                        </ul>
-                    </header>
-                    <hr />
-                    <div class="kratos-post-content">
-                        <p><del>很早就想写了，为什么拖到现在呢？拖延症不行啊！╭(╯^╰)╮</del></p>
-<p><del>其实也不是踩过的坑，就想随便写些什么相关的，避免以后再犯（？？？</del></p>
-<p>最初是18年的3,4月份，被室友推荐了GitHub的博客，结果Git一直下不下来，后来选主题也选了很久，想要一个又简洁又好看的，带点啥装饰物最好了（？？？</p>
-<p>Hexo的主题实在是太多啦，最后还是选定了fexo_(:з」∠)_，但是现在换成了Kratos-Rebirth，萌萌二次元！</p>
-<p>真正开始搭博客是今年一月份了，虽然也没写啥。毕竟没有学习，也没啥可写的。隔得时间太久所以一开始有些东西就忘记放哪了，找位置花了点时间*(:з」∠)*</p>
-<ol>
-<li>透明ico是可以做的！拿一张背景透明的png找在线网站转就好了。一定要png，因为jpg导出的时候背景会自动变成白色的</li>
-<li>有些东西不能随便删，因为不知道写这个主题的人在哪里用了这些东西emmmm，删了可能会出错，true改成false就好啦。PS：Git Bash的报错还是得认真看看的ovo</li>
-<li>最上面的title，date，categories等等，冒号后面是要有个空格的，不然会凉</li>
-<li>markdown是不会给你多空行的！想要两个段落之间有一定的距离，需要加上<code>&lt;/br&gt;</code></li>
-</ol>
-<p>👆如果想到什么再补充叭</p>
-<p>👇记一下git的命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init [folder]</span><br></pre></td></tr></table></figure>
-
-<p>新建一个网站。如果没有设置<code>folder</code>，Hexo默认在目前的文件夹建立网站。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p>新建一篇文章。如果没有设置<code>layout</code>的话，默认使用_config.yml中的<code>default_layout</code>参数代替。如果标题包含空格的话，请使用引号括起来。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-
-<p>生成静态文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-
-<p>文件生成后立即部署网站</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo watch</span><br><span class="line">$ hexo w</span><br></pre></td></tr></table></figure>
-
-<p>监视文件变动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;filename&gt;</span><br></pre></td></tr></table></figure>
-
-<p>发表草稿</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>启动服务器。默认情况下，访问网址为：<code>http://localhost:4000/</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo port</span><br><span class="line">$ hexo p</span><br></pre></td></tr></table></figure>
-
-<p>重设端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo static</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-<p>只使用静态文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo log</span><br><span class="line">$ hexo l</span><br></pre></td></tr></table></figure>
-
-<p>启动日记记录，使用覆盖记录格式</p>
-<p><code>$ hexo render &lt;file1&gt; [file2] ...</code><br>渲染文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo output</span><br><span class="line">$ hexo o</span><br></pre></td></tr></table></figure>
-
-<p>设置输出路径<br><code>$ hexo migrate &lt;type&gt;</code><br>从其他博客系统迁移内容</p>
-<p><code>$ hexo clean</code><br>清除缓存文件 (db.json) 和已生成的静态文件 (public)。</p>
-<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
-<p><code>$ hexo list &lt;type&gt;</code><br>列出网站资料</p>
-<p><code>$ hexo version</code><br>显示 Hexo 版本</p>
-<p><code>$ hexo --safe</code><br>在安全模式下，不会载入插件和脚本。当您在安装新插件遭遇问题时，可以尝试以安全模式重新执行。</p>
-<p><code>$ hexo --debug</code><br>在终端中显示调试信息并记录到<code>debug.log</code>。当您碰到问题时，可以尝试用调试模式重新执行一次，并提交调试信息到 GitHub。</p>
-<p><code>$ hexo --silent</code><br>隐藏终端信息。</p>
-<p><code>$ hexo --config custom.yml</code><br>自定义配置文件的路径，执行后将不再使用<code>_config.yml</code>。</p>
-<p><code>$ hexo --draft</code><br>显示<code>source/_drafts</code>文件夹中的草稿文章。<br><code>$ hexo --cwd /path/to/cwd</code><br>自定义当前工作目录（Current working directory）的路径。</p>
-
-                    </div>
-                    <footer class="kratos-entry-footer clearfix">
-                        <div class="post-like-donate text-center clearfix">
-                            <a class="read-more" href="/2019/01/27/HEXO%E6%90%AD%E5%BB%BA%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91%EF%BC%88bu/#more" title="HEXO搭建踩过的坑（bu">继续阅读 <i class="fa fa-chevron-circle-right"></i></a>
-                        </div>
+                        </span>
+                        <span class="pull-right">
+                            <a class="read-more" href="/2019/01/27/HEXO%E6%90%AD%E5%BB%BA%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91%EF%BC%88bu/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+                        </span>
                     </footer>
                 </div>
             </article>
@@ -215,34 +162,41 @@
     
         
         
-            <article>
-                <div class="kratos-hentry kratos-post-inner clearfix index-post">
+            <article class="kratos-hentry clearfix">
+                <div class="kratos-entry-border-new clearfix">
+                    
                     <div class="kratos-entry-thumb-new">
                         <a href="/2019/01/18/%E4%BB%8E%E9%9B%B6%E5%88%B00%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%A6%E4%B9%A0/">
                             
+                                <img class="kratos-entry-thumb-new-img">
+                            
                         </a>
                     </div>
-                    <header class="kratos-entry-header">
-                        <h1 class="text-center"><a class="kratos-entry-title" href="/2019/01/18/%E4%BB%8E%E9%9B%B6%E5%88%B00%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%A6%E4%B9%A0/">从零到0的编辑器学习</a></h1>
-                        
-                        <ul class="kratos-post-meta text-center">
-                            <li>
+                    <div class="kratos-post-inner-new">
+                        <header class="kratos-entry-header-new">
+                                <a class="label-link" href="/categories/%E5%89%91%E4%B8%89/">剑三</a>
+                            <h2 class="kratos-entry-title-new"><a href="/2019/01/18/%E4%BB%8E%E9%9B%B6%E5%88%B00%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%A6%E4%B9%A0/">从零到0的编辑器学习</a>
+                        </header>
+                        <div class="kratos-entry-content-new">
+                            <p>
+                                
+                                    2018.5.8艰难的打开了编辑器，加载了扬州地图，然后！怎么是一片蓝的啊！怎么滑滚轮都没有用啊！我的扬州呢！十几分钟后，哦，滚轮滑的不够多*(:з」∠)*艰难的调到了想要的画面，室友：“哇，这个直接截图就可以交场景作业了啊！”。我：...
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <footer class="kratos-post-meta-new">
+                        <span class="pull-left">
+                            <a>
                                 <i class="fa fa-calendar"></i>
                                 2019-01-18
-                            </li>
-                            
-                                <li>
-                                    <i class="fa fa-folder"></i>
-                                    分类于
-                                    <a class="label-link" href="/categories/%E5%89%91%E4%B8%89/">剑三</a>
-                                </li>
-                            
-                            
-                                <li>
+                            </a>
+                            <a>
+                                
                                     <i class="fa fa-tags"></i>
                                     <a class="tag-none-link" href="/tags/%E5%89%91%E4%B8%89/" rel="tag">剑三</a>, <a class="tag-none-link" href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" rel="tag">编辑器</a>
-                                </li>
-                            
+                                
+                            </a>
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
@@ -251,30 +205,10 @@
                                 <!-- 当前仅支持waline自带的统计功能 -->
                                 
                             
-                        </ul>
-                    </header>
-                    <hr />
-                    <div class="kratos-post-content">
-                        <h2 id="2018-5-8"><a href="#2018-5-8" class="headerlink" title="2018.5.8"></a>2018.5.8</h2><p>艰难的打开了编辑器，加载了扬州地图，然后！怎么是一片蓝的啊！怎么滑滚轮都没有用啊！我的扬州呢！十几分钟后，哦，滚轮滑的不够多*(:з」∠)*<br>艰难的调到了想要的画面，室友：“哇，这个直接截图就可以交场景作业了啊！”。我：“卧槽！对哦！我场景是照着这个做的，做的稀巴烂。我当时为什么没想到直接截图。”这大概就是傻吧……</p>
-<img src="/.com//01/18/%E4%BB%8E%E9%9B%B6%E5%88%B00%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%A6%E4%B9%A0/1.png" class>
-
-<p>认真的在b站找到了一个重置版编辑器的教程，还在记笔记……然后，就去看动漫了emmmm角色什么的，明天再弄嘿嘿</p>
-<h2 id="5-9-5-10（被催更了扣诶扣）"><a href="#5-9-5-10（被催更了扣诶扣）" class="headerlink" title="5.9-5.10（被催更了扣诶扣）"></a>5.9-5.10（被催更了扣诶扣）</h2><p>（题外话：从选择无垢这首歌作为作业的时候，脑子里一直单曲循环这首歌，好不容易今天没有想无垢了，又开始单曲循环童话镇，谁来救救我OTZ）<br>拖延症晚期所以进展缓慢，两天时间过去了才把主要角色捏好。网上找的捏脸好多都带贴花，或者眼睛颜色是黄的啊什么的*(:з」∠)*然后就打开剑三客户端一个个的改掉。发现有些头发会有bug，服装的可选择范围又缩小了。成男的捏脸真是太难找啦！看上去都差不多，最后只能 “算了，管他和门派搭不搭，帅就行了”。<br>啊，突然发现女主长大后的脸还要重新调过（哇，要不是这篇日志我还没发现扣诶扣）<br>配图是放了一些角色进地图的样子（只是单纯的选了个位置放了进去，所以还是大张着手的样子，有个路人NPC噢）。</p>
-<img src="/.com//01/18/%E4%BB%8E%E9%9B%B6%E5%88%B00%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%A6%E4%B9%A0/2.png" class>
-
-<h2 id="5-26-5-28（很久很久没更新了是不是）"><a href="#5-26-5-28（很久很久没更新了是不是）" class="headerlink" title="5.26-5.28（很久很久没更新了是不是）"></a>5.26-5.28（很久很久没更新了是不是）</h2><p>做好了男主女主扬州分开之后的场景，导出的avi文件真的好大啊，一个三四秒的视频可以有500m。<br>做的时候就觉得湖面有点怪怪的，想着渲染之后应该会好的吧，并没有。更新了最新版本的编辑器，看来是要把做的所有重新导出一下了，还好为了省事每个镜头都重新拖了角色进去。<br>看了看大大做的视频，开始思考要不要适当加一些镜头的运动。是不是要k帧呀，是不是还要考虑镜头移动的速度啊，好麻烦呀。陷入沉思<br>这是一个可爱的男孩子（和他的隼）以及一个可爱的女孩子（和她的扇子舞）</p>
-<img src="/.com//01/18/%E4%BB%8E%E9%9B%B6%E5%88%B00%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%A6%E4%B9%A0/4.png" class>
-
-<img src="/.com//01/18/%E4%BB%8E%E9%9B%B6%E5%88%B00%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%A6%E4%B9%A0/3.png" class>
-
-<h2 id="6-9-6-10"><a href="#6-9-6-10" class="headerlink" title="6.9-6.10"></a>6.9-6.10</h2><p>骨骼动画get，滥竽充数能力get<br>恭喜男配角军爷杀青，✿✿ヽ(°▽°)ノ✿<br>恭喜男嘉宾牵手女嘉宾，成功私（不）奔（是），✿✿ヽ(°▽°)ノ✿<br>不想做了，这玩意伤身体啊……心态崩了，没有配图</p>
-<h2 id="不知道几号开始-6-29"><a href="#不知道几号开始-6-29" class="headerlink" title="不知道几号开始-6.29"></a>不知道几号开始-6.29</h2><p>总算是把视频做完交掉了，剪辑了部分别人的视频拿过来用，自己做的镜头总共有26.5G，真可怕，最终从ae里导出来的avi文件有40G。无损压缩视频弄了我一下午，一方面是总是不满意压缩出来的质量，觉得太模糊了，另一方面是源文件太大了，压缩起来自然很慢。<br>记一些东西好了，说不定以后会用到呢：<br>P001,P008,P012男性NPC角色，P012是大块头的那种，肌肉男<br>P004,P005,P006女性NPC角色<br>NPC好像都没有上半身动画，只有角色动画，每次选动作的时候可以先搜索pst和st，走路是wlk，跑是run<br>小女孩，标准女，小男孩，标准男都是玩家角色<br>玩家角色里面1000-2000都是NPC的服饰，2000开始是门派校服，到2910截止，除了苍云长歌霸刀外所有的门派校服，这些门派的校服在最下面，其余需要的服饰可以在excel找，需要的颜色在偏色里调。<br>头可以选1000或1001，这样可以避免穿模和叠两个头发上去。头里面的基本不会用到，需要头发的时候在帽子里找。门派校服可以先把手，腰带，腿等选为NULL，选好衣服之后点击加载同名插件。如果穿商城衣服必须把手，腰带，腿等选为NULL，不然会穿模。<br>游戏里的表情里面有个作揖，在编辑器里好像是拱手，还有一个是书生行礼（这个有鞠躬的！）。<br>如果是搜门派动作可以搜门派拼音首字母<br>骨骼动画每动一下都要k帧<br>上下半身动画指上半身的动画，角色动画指下半身的动画（没有上下半身动画的时候就是全身动画），两个是可以叠加的<br>emmmm其他的以后如果有遇到再记吧，放一张视频的封面图好了，用的是芙蕖大大的数据（我才没有能力自己捏呢哼）</p>
-
-                    </div>
-                    <footer class="kratos-entry-footer clearfix">
-                        <div class="post-like-donate text-center clearfix">
-                            <a class="read-more" href="/2019/01/18/%E4%BB%8E%E9%9B%B6%E5%88%B00%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%A6%E4%B9%A0/#more" title="从零到0的编辑器学习">继续阅读 <i class="fa fa-chevron-circle-right"></i></a>
-                        </div>
+                        </span>
+                        <span class="pull-right">
+                            <a class="read-more" href="/2019/01/18/%E4%BB%8E%E9%9B%B6%E5%88%B00%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+                        </span>
                     </footer>
                 </div>
             </article>
@@ -282,34 +216,63 @@
     
         
         
-            <article>
-                <div class="kratos-hentry kratos-post-inner clearfix index-post">
+            <article class="kratos-hentry clearfix">
+                <div class="kratos-entry-border-new clearfix">
+                    
                     <div class="kratos-entry-thumb-new">
                         <a href="/2019/01/16/Markdown%E8%AF%AD%E6%B3%95%E4%B8%8ETypora%E5%BF%AB%E6%8D%B7%E9%94%AE/">
                             
+                                <img class="kratos-entry-thumb-new-img">
+                            
                         </a>
                     </div>
-                    <header class="kratos-entry-header">
-                        <h1 class="text-center"><a class="kratos-entry-title" href="/2019/01/16/Markdown%E8%AF%AD%E6%B3%95%E4%B8%8ETypora%E5%BF%AB%E6%8D%B7%E9%94%AE/">Markdown语法与Typora快捷键</a></h1>
-                        
-                        <ul class="kratos-post-meta text-center">
-                            <li>
+                    <div class="kratos-post-inner-new">
+                        <header class="kratos-entry-header-new">
+                                <a class="label-link" href="/categories/%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3/">教程文档</a>
+                            <h2 class="kratos-entry-title-new"><a href="/2019/01/16/Markdown%E8%AF%AD%E6%B3%95%E4%B8%8ETypora%E5%BF%AB%E6%8D%B7%E9%94%AE/">Markdown语法与Typora快捷键</a>
+                        </header>
+                        <div class="kratos-entry-content-new">
+                            <p>
+                                
+                                    标题
+
+
+Markdown语法
+Typora快捷键
+
+
+
+# 一级标题
+Ctrl+1：一级标题
+
+
+## 二级标题
+Ctrl+2：二级标题
+
+
+### 三级标题
+Ctrl+3：三级标题
+
+
+#### 四级标题
+Ctrl+4：四级标题
+...
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <footer class="kratos-post-meta-new">
+                        <span class="pull-left">
+                            <a>
                                 <i class="fa fa-calendar"></i>
                                 2019-01-16
-                            </li>
-                            
-                                <li>
-                                    <i class="fa fa-folder"></i>
-                                    分类于
-                                    <a class="label-link" href="/categories/%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3/">教程文档</a>
-                                </li>
-                            
-                            
-                                <li>
+                            </a>
+                            <a>
+                                
                                     <i class="fa fa-tags"></i>
                                     <a class="tag-none-link" href="/tags/Markdown/" rel="tag">Markdown</a>, <a class="tag-none-link" href="/tags/Typora/" rel="tag">Typora</a>
-                                </li>
-                            
+                                
+                            </a>
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
@@ -318,114 +281,10 @@
                                 <!-- 当前仅支持waline自带的统计功能 -->
                                 
                             
-                        </ul>
-                    </header>
-                    <hr />
-                    <div class="kratos-post-content">
-                        <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><table>
-<thead>
-<tr>
-<th>Markdown语法</th>
-<th>Typora快捷键</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code># 一级标题</code></td>
-<td>Ctrl+1：一级标题</td>
-</tr>
-<tr>
-<td><code>## 二级标题</code></td>
-<td>Ctrl+2：二级标题</td>
-</tr>
-<tr>
-<td><code>### 三级标题</code></td>
-<td>Ctrl+3：三级标题</td>
-</tr>
-<tr>
-<td><code>#### 四级标题</code></td>
-<td>Ctrl+4：四级标题</td>
-</tr>
-<tr>
-<td><code>##### 五级标题</code></td>
-<td>Ctrl+5：五级标题</td>
-</tr>
-<tr>
-<td><code>###### 六级标题</code></td>
-<td>Ctrl+6：六级标题</td>
-</tr>
-<tr>
-<td></td>
-<td>Ctrl+0：段落</td>
-</tr>
-</tbody></table>
-<h2 id="粗体、斜体、删除线和下划线"><a href="#粗体、斜体、删除线和下划线" class="headerlink" title="粗体、斜体、删除线和下划线"></a>粗体、斜体、删除线和下划线</h2><table>
-<thead>
-<tr>
-<th>Markdown语法</th>
-<th>Typora快捷键</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>*斜体*</code></td>
-<td>Ctrl+I：斜体</td>
-</tr>
-<tr>
-<td><code>**粗体**</code></td>
-<td>Ctrl+B：粗体</td>
-</tr>
-<tr>
-<td><code>***加粗斜体***</code></td>
-<td>Ctrl+U：下划线</td>
-</tr>
-<tr>
-<td><code>~~删除线~~</code></td>
-<td>Alt+Shift+5：删除线</td>
-</tr>
-</tbody></table>
-<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p>Markdown语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[链接文字](链接地址 &quot;链接描述&quot;)&#96;</span><br><span class="line">&#96;例如：[我的博客](https:&#x2F;&#x2F;shiningquan.github.io&#x2F; &quot;我的博客&quot;)</span><br><span class="line">&lt;链接地址&gt;&#96;</span><br><span class="line">&#96;例如：&lt;https:&#x2F;&#x2F;shiningquan.github.io&gt;</span><br></pre></td></tr></table></figure>
-
-<p>Typora快捷键：</p>
-<p>Ctrl+K</p>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>Markdown语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 文字引用</span><br></pre></td></tr></table></figure>
-
-<p>Typora快捷键：</p>
-<p>Ctrl+Shift+Q</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>Markdown语法：</p>
-<p>为方便起见，这是使用字符a代替反引号`</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a单行代码a</span><br><span class="line"></span><br><span class="line">aaa</span><br><span class="line">多行代码</span><br><span class="line">多行代码</span><br><span class="line">aaa</span><br></pre></td></tr></table></figure>
-
-<p>Typora快捷键：</p>
-<p>Ctrl+Shift+`</p>
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>Markdown语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">***</span><br></pre></td></tr></table></figure>
-
-<p>以上两种方法均可以表示为分割线</p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>Markdown语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*列表项</span><br><span class="line"></span><br><span class="line">-列表项</span><br><span class="line"></span><br><span class="line">+列表项</span><br></pre></td></tr></table></figure>
-
-<p>以上三种方法均可以表示为列表</p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>Markdown语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">表头1|表头2</span><br><span class="line">-|-|-</span><br><span class="line">内容11|内容12</span><br><span class="line">内容21|内容22</span><br></pre></td></tr></table></figure>
-
-<p>Typora快捷键：</p>
-<p>Ctrl+T</p>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>Markdown语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![图片文字] (图片地址 &quot;图片描述&quot;)</span><br><span class="line">例如：![示例图片] (https:&#x2F;&#x2F;www.example.com&#x2F;example.PNG &quot;示例图片&quot;)</span><br></pre></td></tr></table></figure>
-
-<p>Typora快捷键：</p>
-<p>Ctrl+Shift+I</p>
-<h6 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h6><p>在Hexo中插入图片时，请按照以下步骤进行设置</p>
-<p>-将站点配置文件中的<code>post_asset_folder</code>选项设置成true</p>
-<p>-在站点文件夹中打开git bash，输入命令<code>npm install hexo-asset-image --save</code>安装插件</p>
-<p>-此时使用<code>hexo new title</code>创建文章时，将同时在source/_post文件夹中生成一个与title同名的文件夹，我们只需将待添加的图片放进此文件夹中，然后在文章中通过Markdown语法进行引用即可。例如，在资源文件夹（就是那个与title同名的文件夹）中添加了图片example.PNG，则可以在对应的文章中使用语句<code>![示例图片](title/example.PNG &quot;示例图片&quot;)</code>添加图片</p>
-
-                    </div>
-                    <footer class="kratos-entry-footer clearfix">
-                        <div class="post-like-donate text-center clearfix">
-                            <a class="read-more" href="/2019/01/16/Markdown%E8%AF%AD%E6%B3%95%E4%B8%8ETypora%E5%BF%AB%E6%8D%B7%E9%94%AE/#more" title="Markdown语法与Typora快捷键">继续阅读 <i class="fa fa-chevron-circle-right"></i></a>
-                        </div>
+                        </span>
+                        <span class="pull-right">
+                            <a class="read-more" href="/2019/01/16/Markdown%E8%AF%AD%E6%B3%95%E4%B8%8ETypora%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+                        </span>
                     </footer>
                 </div>
             </article>
@@ -433,34 +292,43 @@
     
         
         
-            <article>
-                <div class="kratos-hentry kratos-post-inner clearfix index-post">
+            <article class="kratos-hentry clearfix">
+                <div class="kratos-entry-border-new clearfix">
+                    
                     <div class="kratos-entry-thumb-new">
                         <a href="/2018/12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/">
                             
+                                <img class="kratos-entry-thumb-new-img">
+                            
                         </a>
                     </div>
-                    <header class="kratos-entry-header">
-                        <h1 class="text-center"><a class="kratos-entry-title" href="/2018/12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/">越南五日行</a></h1>
-                        
-                        <ul class="kratos-post-meta text-center">
-                            <li>
+                    <div class="kratos-post-inner-new">
+                        <header class="kratos-entry-header-new">
+                                <a class="label-link" href="/categories/%E6%B8%B8%E8%AE%B0/">游记</a>
+                            <h2 class="kratos-entry-title-new"><a href="/2018/12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/">越南五日行</a>
+                        </header>
+                        <div class="kratos-entry-content-new">
+                            <p>
+                                
+                                    写在前面的话：
+千万千万别坐红眼航班，呜呜呜太难受了，好好的睡觉时间要在飞机上度过*(:з」∠)*
+在办落地签的那个地方（也就是下飞机后过关以前）买电话卡的话，七天无限流量20万越南盾，十天无限流量本地通话100分钟22万越南盾。一般...
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <footer class="kratos-post-meta-new">
+                        <span class="pull-left">
+                            <a>
                                 <i class="fa fa-calendar"></i>
                                 2018-12-05
-                            </li>
-                            
-                                <li>
-                                    <i class="fa fa-folder"></i>
-                                    分类于
-                                    <a class="label-link" href="/categories/%E6%B8%B8%E8%AE%B0/">游记</a>
-                                </li>
-                            
-                            
-                                <li>
+                            </a>
+                            <a>
+                                
                                     <i class="fa fa-tags"></i>
                                     <a class="tag-none-link" href="/tags/%E6%B8%B8%E8%AE%B0/" rel="tag">游记</a>, <a class="tag-none-link" href="/tags/%E8%B6%8A%E5%8D%97/" rel="tag">越南</a>
-                                </li>
-                            
+                                
+                            </a>
                             
                                 <!-- 当前仅支持valine/waline自带的统计功能 -->
                                 
@@ -469,72 +337,10 @@
                                 <!-- 当前仅支持waline自带的统计功能 -->
                                 
                             
-                        </ul>
-                    </header>
-                    <hr />
-                    <div class="kratos-post-content">
-                        <p>写在前面的话：</p>
-<p>千万千万别坐红眼航班，呜呜呜太难受了，好好的睡觉时间要在飞机上度过*(:з」∠)*</p>
-<p>在办落地签的那个地方（也就是下飞机后过关以前）买电话卡的话，七天无限流量20万越南盾，十天无限流量本地通话100分钟22万越南盾。一般换算是1元人民币3000越南盾</p>
-<p>出国游最好手机上下一个google地图，高德在国外没有用的！</p>
-<p>👇多图预警，依然是想到什么再补充</p>
-<h1 id="DAY1"><a href="#DAY1" class="headerlink" title="DAY1"></a>DAY1</h1><p>越南时间凌晨飞机降落在胡志明市，办签证过海关入境，乘车去酒店，零零碎碎收拾一下最后快三点才睡下</p>
-<p>七点起床收拾退房吃早餐，八点半出发四个小时车程到美奈o(╥﹏╥)o蓝天白云真好看</p>
-<p>仙女溪→红沙丘，全程吃沙，不过踩着细沙还蛮舒服哒</p>
-<p>晚餐自行解决，结果就是我们走了将近半小时找一个美团上的餐厅没找到，返回的路上看见了乐天，进去逛了一圈。最后在酒店旁边一个类似大排档的地方吃了，敲好吃哒，因为语言不通老板还给我们降价了*(:з」∠)*美奈人民真朴实</p>
-<img src="/.com//12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/DSC01029.jpg" class>
-
-<img src="/.com//12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/DSC01033.jpg" class>
-
-<img src="/.com//12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/DSC01042.jpg" class>
-
-<img src="/.com//12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/TIM%E5%9B%BE%E7%89%8720190205214825.jpg" class>
-
-<img src="/.com//12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/TIM%E5%9B%BE%E7%89%8720190205215233.jpg" class>
-
-
-
-<h1 id="DAY2"><a href="#DAY2" class="headerlink" title="DAY2"></a>DAY2</h1><p>上午去的白石丘，沙地摩托真的刺激！将近90度的坡俯冲下去的一瞬间，叫都叫不出来只敢把眼睛闭着，抱紧越南小哥哥的腰*(:з」∠)*</p>
-<p>刺激完后又是四个小时的车程去芽庄，占婆塔→五指岩</p>
-<p>甘蔗汁很甜，五指岩对面有个川菜馆……晚上住的是超大海景房，落地玻璃窗，自带滤镜</p>
-<img src="/.com//12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/DSC01057.jpg" class>
-
-<img src="/.com//12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/DSC01060.jpg" class>
-
-<img src="/.com//12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/DSC01077.jpg" class>
-
-<img src="/.com//12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/TIM%E5%9B%BE%E7%89%8720190205214802.jpg" class>
-
-
-
-<h1 id="DAY3"><a href="#DAY3" class="headerlink" title="DAY3"></a>DAY3</h1><p>今天是海岛一日游！水真的很清，玻璃窗以后不会再坐了，玻璃没擦干净，而且没几条鱼。体验了飞伞，超爽哒！</p>
-<p>上岸之后体验泥浆浴，感觉是兑了水的，泡泥浆浴最好穿次一些的泳衣，最好是那种准备扔了的泳衣。因为泡完之后泳衣上也会有很多泥浆，出门在外又不好洗，很烦</p>
-<img src="/.com//12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/DSC01081.jpg" class>
-
-
-
-<h1 id="DAY4"><a href="#DAY4" class="headerlink" title="DAY4"></a>DAY4</h1><p>逛购物店的一天……</p>
-<p>本来说有个网红冰激凌，结果人家因为春节关门休息了，最后我吃的是和路雪巧克力味甜筒……</p>
-<p>不过晚饭恰的是瓦片烤肉，很棒！很满足！</p>
-<p>PS：感觉越南人的心算有点堪忧啊，饮料需要自己点，结果服务员算了好久，好在可以用中文和她交流，不然得疯</p>
-<img src="/.com//12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/TIM%E5%9B%BE%E7%89%8720190205215222.jpg" class>
-
-
-
-<h1 id="DAY5"><a href="#DAY5" class="headerlink" title="DAY5"></a>DAY5</h1><p>又是早起的一天，四点不到起床收拾赶飞机，又到胡志明，参观了红教堂、百年邮局、歌剧院、市政厅，喝了咖啡，吃完饭之后就是自由行啦！</p>
-<p>美术馆是个拍照的好地方，可我真不喜欢拍照呀QAQ求放过</p>
-<p>范五老街不是老街，这人就叫范五老*(:з」∠)*，在这条街上找到一个吃越南菜的地方，好吃到哭，人均换算成人民币50-60r的样子，也还好对吧</p>
-<p>自由行是真滴快乐，嘿嘿嘿</p>
-<img src="/.com//12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/DSC01093.jpg" class>
-
-<img src="/.com//12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/TIM%E5%9B%BE%E7%89%8720190205214733.jpg" class>
-
-<img src="/.com//12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/TIM%E5%9B%BE%E7%89%8720190205214814.jpg" class>
-                    </div>
-                    <footer class="kratos-entry-footer clearfix">
-                        <div class="post-like-donate text-center clearfix">
-                            <a class="read-more" href="/2018/12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/#more" title="越南五日行">继续阅读 <i class="fa fa-chevron-circle-right"></i></a>
-                        </div>
+                        </span>
+                        <span class="pull-right">
+                            <a class="read-more" href="/2018/12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+                        </span>
                     </footer>
                 </div>
             </article>
