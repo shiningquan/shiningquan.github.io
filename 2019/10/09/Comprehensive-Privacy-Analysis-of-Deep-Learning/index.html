@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="">
+  <title>Comprehensive Privacy Analysis of Deep Learning | 十柠暄</title>
+  <meta name="author" content="十柠暄" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="Membership Inference, S&P" />
+  
+  <meta name="description" content="论文信息标题：Comprehensive Privacy Analysis of Deep Learning 作者：Milad Nasr, Reza Shokri, Amir Houmansadr 出处：S&amp;P 年份：2019 概述本文对深度学习模型上的白盒隐私推理攻击进行了详细的分析。本文针对被动和主动推理攻击这，在独立和联合设置下设计攻击，并假设对手具有不同的先验知识，证明了即使是通用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Comprehensive Privacy Analysis of Deep Learning">
+<meta property="og:url" content="http://example.com/2019/10/09/Comprehensive-Privacy-Analysis-of-Deep-Learning/index.html">
+<meta property="og:site_name" content="十柠暄">
+<meta property="og:description" content="论文信息标题：Comprehensive Privacy Analysis of Deep Learning 作者：Milad Nasr, Reza Shokri, Amir Houmansadr 出处：S&amp;P 年份：2019 概述本文对深度学习模型上的白盒隐私推理攻击进行了详细的分析。本文针对被动和主动推理攻击这，在独立和联合设置下设计攻击，并假设对手具有不同的先验知识，证明了即使是通用">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/null">
+<meta property="article:published_time" content="2019-10-09T10:58:34.000Z">
+<meta property="article:modified_time" content="2021-03-25T11:05:56.607Z">
+<meta property="article:author" content="十柠暄">
+<meta property="article:tag" content="S&amp;P">
+<meta property="article:tag" content="Membership Inference">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/null">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="十柠暄" type="application/atom+xml">
+</head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">十柠暄</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/friends/"><i class="fa fa-paw"></i>好伙伴</a></li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>十柠暄</h2> <br />
+                        <span>山有木兮木有枝，心悦君兮君不知</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">Comprehensive Privacy Analysis of Deep Learning</h1>
+                
+                <ul class="kratos-post-meta text-center">
+                    <li><i class="fa fa-calendar"></i> 2019-10-09</li>
+                    <li><i class="fa fa-user"></i> 作者 十柠暄</li>
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~2.02K
+                        
+                        字
+                    </li>
+                    
+                </ul>
+            </header>
+            <div class="kratos-post-content">
+                <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                    本文最后编辑于 <time datetime="1616670356607"></time> 前，其中的内容可能需要更新。
+                </div>
+                
+                    <div class="kratos-post-inner-toc">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E4%BF%A1%E6%81%AF"><span class="toc-number">1.</span> <span class="toc-text">论文信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">3.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E9%99%88%E8%BF%B0"><span class="toc-number">3.0.0.2.</span> <span class="toc-text">问题陈述</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%B7%E5%80%BC"><span class="toc-number">4.</span> <span class="toc-text">价值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E8%B4%A1%E7%8C%AE"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">论文贡献</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E5%BC%B1%E7%82%B9"><span class="toc-number">4.0.0.2.</span> <span class="toc-text">论文弱点</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%A1%88"><span class="toc-number">5.</span> <span class="toc-text">方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E4%BE%9D%E6%8D%AE"><span class="toc-number">5.0.0.1.</span> <span class="toc-text">技术依据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E6%A1%86%E6%9E%B6"><span class="toc-number">5.0.0.2.</span> <span class="toc-text">方案框架</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0"><span class="toc-number">6.</span> <span class="toc-text">评估</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BB%B7%E6%A0%87%E5%87%86"><span class="toc-number">6.0.0.1.</span> <span class="toc-text">评价标准</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E7%BB%93%E6%9E%9C"><span class="toc-number">6.0.0.2.</span> <span class="toc-text">评估结果</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                
+                <hr />
+                <h1 id="论文信息"><a href="#论文信息" class="headerlink" title="论文信息"></a>论文信息</h1><p>标题：Comprehensive Privacy Analysis of Deep Learning</p>
+<p>作者：Milad Nasr, Reza Shokri, Amir Houmansadr</p>
+<p>出处：S&amp;P</p>
+<p>年份：2019</p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文对深度学习模型上的白盒隐私推理攻击进行了详细的分析。本文针对被动和主动推理攻击这，在独立和联合设置下设计攻击，并假设对手具有不同的先验知识，证明了即使是通用化的模型也极易受到白盒成员推理攻击的影响。</p>
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><p>许多应用程序和服务在大范围（且可能敏感）的用户数据上使用深度学习算法，其中包括用户语音，图像以及医疗，财务，社交和位置数据点。</p>
+<h4 id="问题陈述"><a href="#问题陈述" class="headerlink" title="问题陈述"></a>问题陈述</h4><p>提出问题：深度学习算法对于单个训练数据样本的信息泄露量是多少？</p>
+<p>定义对于目标训练数据记录的一个模型的敏感隐私泄露为：攻击者可以推理出的关于数据记录的信息，并且不能由未使用该训练数据的相似模型推理得出。</p>
+<h1 id="价值"><a href="#价值" class="headerlink" title="价值"></a>价值</h1><h4 id="论文贡献"><a href="#论文贡献" class="headerlink" title="论文贡献"></a>论文贡献</h4><p>本文提供了一个使用白盒成员推理攻击进行深度神经网络隐私分析的综合框架，并且从以下方面对该框架进行了评估：独立/联合设置；攻击完美训练/进行了微调的模型；无监督攻击；被动/主动推理攻击。</p>
+<p>证明了即使是通用化的模型也极易受到白盒成员推理攻击的影响；即使使用预先训练的最先进的目标模型，攻击仍然有效。</p>
+<h4 id="论文弱点"><a href="#论文弱点" class="headerlink" title="论文弱点"></a>论文弱点</h4><p>本文只针对论文中提出的攻击方法进行了详细描述和评估，通过实验结果可以看到攻击的准确率几乎都在70%及以上。本文在文章最后提到了差分隐私，说差分隐私是一个强大的防御方法，但是又说本文的攻击者可以通过观察参数来推理大量的私人信息，并不清楚差分隐私能不能防御本文的攻击方法。</p>
+<h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><h4 id="技术依据"><a href="#技术依据" class="headerlink" title="技术依据"></a>技术依据</h4><p>深度神经网络会记住有关其训练数据的信息，因此容易受到推理攻击。并且在白盒背景下，攻击者可以获取模型（包括模型参数），进而可以计算每一层的输出，梯度还有损失。</p>
+<p>本文利用随机梯度下降（SGD）算法的隐私漏洞来设计白盒推理攻击。因为为了最大程度的减少模型的预期损失，SGD算法会在整个训练数据集的损失梯度趋于零的方向上反复更新模型参数。因此，每个训练数据样本都会在模型参数上的损失函数的局部梯度上留下明显的足迹。</p>
+<p>攻击者利用这些可以获取的信息进行攻击，并且评估在各种场景下的训练数据泄露程度。</p>
+<h4 id="方案框架"><a href="#方案框架" class="headerlink" title="方案框架"></a>方案框架</h4><p>给定目标数据(x,y)，攻击者在目标输入x上运行目标模型f，计算所有隐藏层、模型输出和损失函数。攻击者还会在反向传播时计算相对于每个层的参数的损耗梯度。这些计算构成了推理攻击的输入特征。</p>
+<p>攻击模型由卷积神经网络(CNN)和全连接网络组成(FCN)，攻击者对每个攻击特征观察多次，并在将它们传递到相应的攻击组件之前对其进行堆叠。CNN和FCN组件的输出附加到一起，并且此向量传递到完全连接的编码器，利用编码器和多个隐藏层来组合所有攻击特征提取组件的输出。编码器的输出是单个分数，即攻击的输出，预测了输入数据的隶属概率。</p>
+<p><img src="/.com//1.png" alt="1"></p>
+<h1 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h1><h4 id="评价标准"><a href="#评价标准" class="headerlink" title="评价标准"></a>评价标准</h4><p>Attack accuracy：对于一个未知的数据点的正确的成员资格预测的分数</p>
+<p>True/False positive：True positive代表本来是成员，分类成成员；False positive代表本来不是成员，分类成成员</p>
+<p>Prediction uncertainty：使用对于给定输入的预测向量的归一化熵来计算</p>
+<h4 id="评估结果"><a href="#评估结果" class="headerlink" title="评估结果"></a>评估结果</h4><p><strong>场景1：</strong>独立学习；攻击完美训练的模型；CIFAR100</p>
+<p>证明了模型最后一层的输出泄露的成员信息最多；相对于模型输出来说，梯度会泄露更多的成员信息；相较于模型的其它层，最后一层的梯度泄露更多的成员信息；训练集大小、成员和非成员的比例将影响攻击准确性；成员的梯度范式随着训练周期下降；拥有高预测不准确性的类会泄露更多成员信息。</p>
+<p><strong>场景2：</strong>独立学习；无监督攻击；CIFAR100，Texas100，Purchase100</p>
+<p>从实验结果来看，本文的攻击在当前场景下提供了很高的攻击准确度</p>
+<p><strong>场景3：</strong>独立学习；攻击微调（为了更好的训练准确度）模型</p>
+<p>攻击者可以区分成员（分别在训练模型的数据集里和训练微调模型的数据集里）和非成员，还可以区分两个数据集的成员。</p>
+<p><strong>场景4：</strong>联邦学习；被动推理攻击（默默观察）</p>
+<p>被动全局攻击者（参数聚合器）。对于CIFAR100数据集，达到了一个较高的准确度，但是对于Texas100和Purchase100，与独立学习相比准确度下降。</p>
+<p>被动本地攻击者（学习参与者）。相较于全局攻击，准确度低，因为只能观察聚合之后的参数更新，限制了信息泄露。</p>
+<p><strong>场景5：</strong>联邦学习；主动推理攻击（会攻击性的修改参数更新）</p>
+<p>梯度上升攻击：相较被动全局攻击，主动全局攻击获得更高的准确度。本地攻击的准确度低于全局攻击。</p>
+<p>孤立攻击：攻击者隔离目标参与者和其学习进程。隔离之后目标参与者的模型不会进行聚合，并且存储了很多信息。</p>
+<p>仅仅运用孤立，攻击准确度上升。将梯度上升和孤立合起来运用，攻击准确度进一步提高。</p>
+
+            </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/Membership-Inference/" rel="tag">Membership Inference</a>, <a class="tag-none-link" href="/tags/S-P/" rel="tag">S&P</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2021-03-25</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" 越南五日行" href="/2019/02/05/越南五日行/">&lt; 上一篇</a>
+                </div>
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" Stolen Memories: Leveraging Model Memorization for Calibrated White-Box Membership Inference" href="/2020/11/03/Stolen-Memories-Leveraging-Model-Memorization-for-Calibrated-White-Box-Membership-Inference/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.jpg" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar"></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E4%BF%A1%E6%81%AF"><span class="toc-text">论文信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E9%99%88%E8%BF%B0"><span class="toc-text">问题陈述</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%B7%E5%80%BC"><span class="toc-text">价值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E8%B4%A1%E7%8C%AE"><span class="toc-text">论文贡献</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E5%BC%B1%E7%82%B9"><span class="toc-text">论文弱点</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%A1%88"><span class="toc-text">方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E4%BE%9D%E6%8D%AE"><span class="toc-text">技术依据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E6%A1%86%E6%9E%B6"><span class="toc-text">方案框架</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0"><span class="toc-text">评估</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BB%B7%E6%A0%87%E5%87%86"><span class="toc-text">评价标准</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E7%BB%93%E6%9E%9C"><span class="toc-text">评估结果</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%91%E4%B8%89/">剑三</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E8%AF%B4%E7%AC%94%E8%AE%B0/">小说笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3/">教程文档</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E8%AE%B0/">游记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">2</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Markdown/" style="font-size: 0.6em;">Markdown</a> <a href="/tags/Membership-Inference/" style="font-size: 0.8em;">Membership Inference</a> <a href="/tags/S-P/" style="font-size: 0.6em;">S&P</a> <a href="/tags/Typora/" style="font-size: 0.6em;">Typora</a> <a href="/tags/USNIX/" style="font-size: 0.6em;">USNIX</a> <a href="/tags/hexo/" style="font-size: 0.6em;">hexo</a> <a href="/tags/%E5%89%91%E4%B8%89/" style="font-size: 0.6em;">剑三</a> <a href="/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 0.6em;">游记</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 0.6em;">编辑器</a> <a href="/tags/%E8%80%BD%E7%BE%8E/" style="font-size: 0.6em;">耽美</a> <a href="/tags/%E8%B6%8A%E5%8D%97/" style="font-size: 0.6em;">越南</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2021/03/25/%E9%BB%98%E8%AF%BB/"><i class="fa  fa-book"></i> 默读</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/11/03/Stolen-Memories-Leveraging-Model-Memorization-for-Calibrated-White-Box-Membership-Inference/"><i class="fa  fa-book"></i> Stolen Memories: Leveraging Model Memorization for Calibrated White-Box Membership Inference</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2019/10/09/Comprehensive-Privacy-Analysis-of-Deep-Learning/"><i class="fa  fa-book"></i> Comprehensive Privacy Analysis of Deep Learning</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2019/02/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/"><i class="fa  fa-book"></i> 越南五日行</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2019/01/27/HEXO%E6%90%AD%E5%BB%BA%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91%EF%BC%88bu/"><i class="fa  fa-book"></i> HEXO搭建踩过的坑（bu</a>
+            
+          
+        
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <li><a target="_blank" rel="nofollow" href="https://weibo.com/u/5676652876"><i class="fa fa-weibo"></i></a></li>
+                        <li><a href="mailto:1914250712@qq.com"><i class="fa fa-envelope"></i></a></li>
+                        
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/shiningquan"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 十柠暄 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by 十柠暄.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+<script async src="/js/candy.min.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>

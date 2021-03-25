@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="">
+  <title>Stolen Memories: Leveraging Model Memorization for Calibrated White-Box Membership Inference | 十柠暄</title>
+  <meta name="author" content="十柠暄" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="Membership Inference, USNIX" />
+  
+  <meta name="description" content="基本信息论文来源Klas Leino and Matt Fredrikson. &#96;&#96;Stolen Memories: Leveraging Model Memorization for Calibrated White-Box Membership Inference’’ Proceedings of the 29th USENIX Security Symposium, 2020. 概述本文针对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stolen Memories: Leveraging Model Memorization for Calibrated White-Box Membership Inference">
+<meta property="og:url" content="http://example.com/2020/11/03/Stolen-Memories-Leveraging-Model-Memorization-for-Calibrated-White-Box-Membership-Inference/index.html">
+<meta property="og:site_name" content="十柠暄">
+<meta property="og:description" content="基本信息论文来源Klas Leino and Matt Fredrikson. &#96;&#96;Stolen Memories: Leveraging Model Memorization for Calibrated White-Box Membership Inference’’ Proceedings of the 29th USENIX Security Symposium, 2020. 概述本文针对">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/null">
+<meta property="article:published_time" content="2020-11-03T11:19:57.000Z">
+<meta property="article:modified_time" content="2021-03-25T11:35:15.764Z">
+<meta property="article:author" content="十柠暄">
+<meta property="article:tag" content="Membership Inference">
+<meta property="article:tag" content="USNIX">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/null">
+<meta name="twitter:site" content="@null">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="十柠暄" type="application/atom+xml">
+</head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">十柠暄</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/friends/"><i class="fa fa-paw"></i>好伙伴</a></li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>十柠暄</h2> <br />
+                        <span>山有木兮木有枝，心悦君兮君不知</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">Stolen Memories: Leveraging Model Memorization for Calibrated White-Box Membership Inference</h1>
+                
+                <ul class="kratos-post-meta text-center">
+                    <li><i class="fa fa-calendar"></i> 2020-11-03</li>
+                    <li><i class="fa fa-user"></i> 作者 十柠暄</li>
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~5.01K
+                        
+                        字
+                    </li>
+                    
+                </ul>
+            </header>
+            <div class="kratos-post-content">
+                <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                    本文最后编辑于 <time datetime="1616672115764"></time> 前，其中的内容可能需要更新。
+                </div>
+                
+                    <div class="kratos-post-inner-toc">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-number">1.</span> <span class="toc-text">基本信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E6%9D%A5%E6%BA%90"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">论文来源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">概述</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E8%A6%81%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">论文要点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E9%99%88%E8%BF%B0"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">问题陈述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A8%81%E8%83%81%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.0.0.3.</span> <span class="toc-text">威胁模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E8%B4%A1%E7%8C%AE"><span class="toc-number">2.0.0.4.</span> <span class="toc-text">主要贡献</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%A1%88"><span class="toc-number">3.</span> <span class="toc-text">方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%9C%80%E4%BC%98%E6%88%90%E5%91%98%E6%8E%A8%E7%90%86bayes-wb"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">贝叶斯最优成员推理bayes-wb</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E6%84%8F%E5%88%86%E5%B8%83%E6%88%90%E5%91%98%E6%8E%A8%E7%90%86general-wb"><span class="toc-number">3.0.0.2.</span> <span class="toc-text">任意分布成员推理general-wb</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E6%88%90%E5%91%98%E6%8E%A8%E7%90%86"><span class="toc-number">3.0.0.3.</span> <span class="toc-text">深度模型中的成员推理</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0"><span class="toc-number">4.</span> <span class="toc-text">评估</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">评价指标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-number">4.0.0.2.</span> <span class="toc-text">数据集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E7%BB%93%E6%9E%9C"><span class="toc-number">4.0.0.3.</span> <span class="toc-text">评估结果</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%84%E8%AE%BA"><span class="toc-number">5.</span> <span class="toc-text">评论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB"><span class="toc-number">5.0.0.1.</span> <span class="toc-text">扩展阅读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AF%E7%A4%BA"><span class="toc-number">5.0.0.2.</span> <span class="toc-text">启示</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                
+                <hr />
+                <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><h4 id="论文来源"><a href="#论文来源" class="headerlink" title="论文来源"></a>论文来源</h4><p>Klas Leino and Matt Fredrikson. ``Stolen Memories: Leveraging Model Memorization for Calibrated White-Box Membership Inference’’ Proceedings of the 29th USENIX Security Symposium, 2020.</p>
+<h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>本文针对白盒设置下的成员推理攻击进行了讨论，首先在线性模型中运用贝叶斯优化进行攻击，进而将攻击思路推广到深度模型中，并提出对攻击的精度进行校准。最后本文对攻击方法进行了防御评估。</p>
+<h1 id="论文要点"><a href="#论文要点" class="headerlink" title="论文要点"></a>论文要点</h1><h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>机器学习的许多应用涉及敏感个人数据的收集和处理，这引起了我们对于隐私的担忧。特别是，将机器学习算法应用于私人训练数据时，生成的模型可能会通过其行为或表示，无意间泄露有关该数据的信息。成员推理攻击旨在确定在用于构建模型的训练集中是否存在给定的数据点。迄今为止，大多数成员推理攻击都遵循影子模型方法，Nasr等人将该方法扩展到白盒设置，但是他们发现将影子模型方法简单扩展到白盒设置不会产生有效的攻击。因此，本文基于这个背景，研究并提出一种有效的白盒成员推理攻击。</p>
+<h4 id="问题陈述"><a href="#问题陈述" class="headerlink" title="问题陈述"></a>问题陈述</h4><p>目前的成员推理攻击方法大多是在黑盒设置下，虽然Nasr等人从目标模型获得激活和梯度信息，并将其作为攻击模型的功能，以此将攻击扩展到白盒设置中。但是他们发现这种简单扩展不会产生有效的攻击，因此他们假设对手已经知道目标模型的训练数据的很大一部分，但这种白盒攻击偏离了大多数针对成员推理的工作所共有的威胁模型。</p>
+<p>因此本文重新审视了白盒成员推理的问题，提出了一种有效的白盒成员推理攻击，这种攻击无需访问目标模型的任何训练数据即可进行操作。并且，本文的分析揭示了对模型中过度拟合如何发生的更深入的了解，即训练数据中存在的特有特征（仅对训练数据具有预测性，而对采样分布没有预测性）通常在训练过程中被编码在模型中。</p>
+<h4 id="威胁模型"><a href="#威胁模型" class="headerlink" title="威胁模型"></a>威胁模型</h4><ul>
+<li><p>本文展示了如何明确识别深度网络中的记忆，并利用它来进行成员推理。成员信息通过目标模型的特有功能泄漏，而训练数据中分布的特征与普通人群中分布的特征不同，这些特征提供了支持或反对成员资格的证据。</p>
+</li>
+<li><p>本文发现可以对攻击进行校准，以增强对肯定推理的信心。</p>
+</li>
+<li><p>本文评估了针对本文攻击方法的常用防御的实用性。</p>
+</li>
+</ul>
+<h4 id="主要贡献"><a href="#主要贡献" class="headerlink" title="主要贡献"></a>主要贡献</h4><ul>
+<li>本文展示了如何明确识别深度网络中的记忆，并利用它来进行成员推理。成员信息通过目标模型的特有功能泄漏，而训练数据中分布的特征与普通人群中分布的特征不同，这些特征提供了支持或反对成员资格的证据。</li>
+<li>本文发现可以对攻击进行校准，以增强对肯定推理的信心。</li>
+<li>本文评估了针对本文攻击方法的常用防御的实用性。</li>
+</ul>
+<h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><p><img src="/.com//intuition.png" alt="图1：两个高斯分布的示例"></p>
+<p>图1展示了两个高斯分布$\eta^{<em>}$和$\hat{\eta}$的示例，其中$\eta^{</em>}$表示普通人群、$\hat{\eta}$表示训练集。如果$x^{\prime}$满足公式1，则我们认为$x^{\prime}$更可能从$\hat{\eta}$中提取，而不是$\eta^{*}$。因此我们可以创建一个分类器来判断$x^{\prime}$是从哪个分布里提取的。</p>
+<p>\begin{equation}<br>    Pr_{\eta^{*}}\left[x^{\prime}\right]&lt;Pr_{\hat{\eta}}\left[x^{\prime}\right]<br>    \end{equation}</p>
+<h4 id="贝叶斯最优成员推理bayes-wb"><a href="#贝叶斯最优成员推理bayes-wb" class="headerlink" title="贝叶斯最优成员推理bayes-wb"></a>贝叶斯最优成员推理bayes-wb</h4><p><strong>攻击假设：</strong></p>
+<ul>
+<li>假设数据符合高斯分布，并且满足朴素贝叶斯假设</li>
+<li>使用经验均值和协方差将训练集建模为高斯分布</li>
+<li>假设目标模型是线性模型</li>
+</ul>
+<p>由上述思想，攻击者可以利用朴素贝叶斯假设进行成员推理攻击，也就是说，攻击者可以将给定标记的$x$的观测概率写作独立观测$x$的每个特征的概率的乘积。公式2给出成员资格的贝叶斯最优预测器。其中攻击模型$m^{y}(x)$被定义为，给出点$(x,y)$属于训练集$S$的概率。</p>
+<p>\begin{equation}<br>m^{y}(x)=\mathcal{\delta}\left(w^{y T} x+b^{y}\right)<br>\end{equation}</p>
+<p>\begin{center}<br>    where $\qquad w^{y}=\frac{\hat{\mu}<em>{y}-\mu</em>{y}^{<em>}}{\sigma^{2}} \qquad b^{y}=\sum_{j} \frac{\mu_{y j}^{</em> 2}-\hat{\mu}<em>{y j}^{2}}{2 \sigma</em>{j}^{2}}$<br>\end{center}</p>
+<p>在现实中，攻击者并不能准确的知道分布$\hat{\mathcal{D}}$和$\mathcal{D}^{<em>}$的参数，但是目标模型$\hat{g}$学习到的权重会对$\hat{\mathcal{D}}$更加敏感，因此攻击者可以使用权重来对有关$\hat{\mathcal{D}}$和$\mathcal{D}^{</em>}$的差异的有用信息进行编码。具体攻击流程如下：</p>
+<ul>
+<li>在辅助数据上训练代理模型。</li>
+<li>将代理模型的权重与目标模型的权重进行比较，以创建攻击模型。</li>
+<li>将样本点$(x,y)$输入攻击模型，模型会给出判断结果。因为在目标模型中使用的特征与在代理模型中使用的特征不同，因此它可以用于确定成员资格。</li>
+</ul>
+<h4 id="任意分布成员推理general-wb"><a href="#任意分布成员推理general-wb" class="headerlink" title="任意分布成员推理general-wb"></a>任意分布成员推理general-wb</h4><p><img src="/.com//attack_model.png" alt="图2：通用攻击模型的说明"></p>
+<p>bayes-wb攻击通过测量目标模型的权重与代理模型所近似的真实分布的理想权重之间的某种位移来加权成员预测。因此本文定义了一个位移函数$d_f$，将其逐元素应用于模型的权重，这样可以将bayes-wb应用到任意分布中。在高斯朴素贝叶斯假设下，逐元素减法（即$d_f (x,y)=x-y$）是进行成员推理的最佳选择，但对于其他分布而言，不同的位移函数可能更合适。</p>
+<p>图2显示了general-wb的模型，将学习到的位移函数$d_f$逐元素应用于目标和代理模型的权重，以生成攻击模型权重$W$，同时也应用于目标和代理模型的偏置，以生成攻击模型的偏置$b$。然后，使用$W$和$x$的内积进行成员预测。</p>
+<h4 id="深度模型中的成员推理"><a href="#深度模型中的成员推理" class="headerlink" title="深度模型中的成员推理"></a>深度模型中的成员推理</h4><p>我们可以将上述思想应用于深度网络的各个层中，但是在这之前我们需要将网络分解为两个函数，即$f=g \circ h$。其中，$h$计算特征，$g$使用这些特征进行分类。</p>
+<p>对于网络顶层，$g$是一个线性模型，可以直接应用上述算法。对于网络中低层，$g$不再是线性的，但是我们可以通过局部线性近似来将$g$近似为线性的，然后应用上述算法，如图3。</p>
+<p><img src="/.com//linear.png" alt="图3：局部线性近似"></p>
+<p>由于模型的内部表示在各层之间并不是独立的，因此我们不能简单地将每一层的近似权重串联起来，并将其视为对单个模型的攻击。相对的，我们可以使用一个元模型，该模型学习如何组合各个分层攻击的逻辑输出。</p>
+<h1 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h1><h4 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h4><p>攻击的准确度是指$\mathcal{A}$的预测等于$b$的概率。由于攻击者随机猜测可以达到50％的准确度，因此我们通常选择描述攻击的优势，即公式2给出的。优势将准确度缩放到基线的50％，以得出介于-1和1的值。</p>
+<p>\begin{equation}<br>advantage(\mathcal{A})=2Pr[\mathcal{A}((x, y), aux(\hat{g}))=b]-1<br>\end{equation}</p>
+<p>如果对手可以自信地识别出任何数据点，就会发生侵犯隐私的行为，这样造成的威胁要比攻击者以较低的信心识别每个训练人员所造成的威胁大得多。因此，我们还将精度（等式3）视为攻击者的关键目标。为了使攻击者能够得出可靠的推论，精度必须明显大于1/2。如果没有点被预测为成员，则将精度定义为1/2。</p>
+<p>\begin{equation}<br>precision(\mathcal{A})=Pr[b=1 \mid \mathcal{A}((x, y), aux(\hat{g}))=1]<br>\end{equation}</p>
+<p>最后，召回率（等式4）也是一项评估指标。但是，我们对这个指标的重视程度较低，因为如果无法在任何点上返回可信的推断，则具有较高召回率的攻击在实践中不一定有效。</p>
+<p>\begin{equation}<br>recall(\mathcal{A})=Pr[\mathcal{A}((x, y), aux(\hat{g}))=1 \mid b=1]<br>\end{equation}</p>
+<h4 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h4><p>本文针对合成数据和源自真实数据的九个分类数据集进行了实验。通常，从医学和金融等领域选择数据集，本文为了便于与以前的工作进行比较，还包括了三个常见的图像数据集（MNIST，CIFAR10和CIFAR100）。</p>
+<p>合成数据集具有10个类别，75个要素，数据记录量分别为400、800或1600，每类具有相等数量的记录。合成数据的特征是从多元高斯分布中随机抽取的。</p>
+<p>分类数据集包含，成年人，Pima糖尿病；威斯康星州乳腺癌，肝炎，德国信贷，LFW；MNIST，CIFAR10和CIFAR100。图4显示了每个数据集的特征。</p>
+<p><img src="/.com//data.png" alt="图4：实验中使用的数据集"></p>
+<h4 id="评估结果"><a href="#评估结果" class="headerlink" title="评估结果"></a>评估结果</h4><p>在评估每种攻击时，本文将数据随机分为三个不相交的组：训练，测试和保持。训练组和测试组各占实例总数的四分之一，而保留组则占实例总数的剩余一半。目标模型在训练组上进行了训练，而攻击者只允许使用保留组，在训练组（成员）和测试组（非成员）上评估了攻击模型的预测，每个实验在数据拆分的不同随机采样上重复10次，并取平均值。</p>
+<p>在整个评估过程中，我们评估了四种不同的攻击：天真，bayes-wb，general-wb和shadow-bb。天真的攻击是指，当且仅当x正确分类时，攻击模型才能预测实例x是训练集的成员。shadow-bb是指黑盒阴影模型攻击。</p>
+<p>我们可以将无所不知的攻击视为对高斯朴素贝叶斯数据进行白盒攻击的预期准确性的上限，因为这是真正的贝叶斯最优攻击。本文的攻击平均获得了全知攻击的84％的优势，这表明代理模型能够根据需要大致捕获总体分布，以检测目标模型对特征的特质使用。</p>
+<p>当代表位移函数的神经网络被赋予足够的能力来重现bayes-wb攻击时，general-wb平均恢复了bayes-wb攻击优势的94％。通过检查位移网络的权重，我们发现general-wb几乎精确地学习了逐元素减法，这表明了其学习最佳位移函数的潜力。如果容量过大，则general-wb攻击的性能仅会稍差一些，平均可达到最低general-wb攻击优势的92％（Bayes-wb的86％），这表明General-wb不太容易过度拟合。</p>
+<p>当然，我们发现这种模式对于现实世界的数据集也同样有效。在攻击真实数据集Adult时，我们观察到，随着更多数据可用于训练，攻击的优势逐渐减弱，但这个优势在整个数据集上变化得很小（\textless4％）。这可能表明Adult数据集足够大，可以通过标准训练获得的中等大小的MLP模型来防止任何重大的信息泄漏。</p>
+<h1 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h1><h4 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h4><p>Milad Nasr, Reza Shokri, and Amir Houmansadr. Comprehensive    privacy analysis of deep learning: Stand-alone and    federated learning under passive and active white-box inference    attacks. CoRR, abs/1812.00910, 2018.</p>
+<p>Reza Shokri, Marco Stronati, and Vitaly Shmatikov. Membership inference attacks against machine learning models. CoRR, abs/1610.05820, 2016.</p>
+<h4 id="启示"><a href="#启示" class="headerlink" title="启示"></a>启示</h4><p>相对于先前的工作，这篇论文改进的地方是用到了模型内部的信息，可以让攻击者对自己推理结果更加有信心，但他仍然有影子模型的思想在里面。本文中提到每个类别可能具有不同的均值，因此必须使用单独的标准来将它们区分开，但是作者直接假定为对手提供了真实的类别标签，所以没有在这个地方多做说明，而我认为我可以在我的工作中利用这一点，因为我想要推理出来的是一个类。</p>
+
+            </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/Membership-Inference/" rel="tag">Membership Inference</a>, <a class="tag-none-link" href="/tags/USNIX/" rel="tag">USNIX</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2021-03-25</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" Comprehensive Privacy Analysis of Deep Learning" href="/2019/10/09/Comprehensive-Privacy-Analysis-of-Deep-Learning/">&lt; 上一篇</a>
+                </div>
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" 默读" href="/2021/03/25/默读/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.jpg" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar"></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">基本信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E6%9D%A5%E6%BA%90"><span class="toc-text">论文来源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E8%A6%81%E7%82%B9"><span class="toc-text">论文要点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E9%99%88%E8%BF%B0"><span class="toc-text">问题陈述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A8%81%E8%83%81%E6%A8%A1%E5%9E%8B"><span class="toc-text">威胁模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E8%B4%A1%E7%8C%AE"><span class="toc-text">主要贡献</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%A1%88"><span class="toc-text">方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%9C%80%E4%BC%98%E6%88%90%E5%91%98%E6%8E%A8%E7%90%86bayes-wb"><span class="toc-text">贝叶斯最优成员推理bayes-wb</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E6%84%8F%E5%88%86%E5%B8%83%E6%88%90%E5%91%98%E6%8E%A8%E7%90%86general-wb"><span class="toc-text">任意分布成员推理general-wb</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E6%88%90%E5%91%98%E6%8E%A8%E7%90%86"><span class="toc-text">深度模型中的成员推理</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0"><span class="toc-text">评估</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87"><span class="toc-text">评价指标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-text">数据集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E7%BB%93%E6%9E%9C"><span class="toc-text">评估结果</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%84%E8%AE%BA"><span class="toc-text">评论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB"><span class="toc-text">扩展阅读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AF%E7%A4%BA"><span class="toc-text">启示</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%91%E4%B8%89/">剑三</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E8%AF%B4%E7%AC%94%E8%AE%B0/">小说笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3/">教程文档</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E8%AE%B0/">游记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">2</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Markdown/" style="font-size: 0.6em;">Markdown</a> <a href="/tags/Membership-Inference/" style="font-size: 0.8em;">Membership Inference</a> <a href="/tags/S-P/" style="font-size: 0.6em;">S&P</a> <a href="/tags/Typora/" style="font-size: 0.6em;">Typora</a> <a href="/tags/USNIX/" style="font-size: 0.6em;">USNIX</a> <a href="/tags/hexo/" style="font-size: 0.6em;">hexo</a> <a href="/tags/%E5%89%91%E4%B8%89/" style="font-size: 0.6em;">剑三</a> <a href="/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 0.6em;">游记</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 0.6em;">编辑器</a> <a href="/tags/%E8%80%BD%E7%BE%8E/" style="font-size: 0.6em;">耽美</a> <a href="/tags/%E8%B6%8A%E5%8D%97/" style="font-size: 0.6em;">越南</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2021/03/25/%E9%BB%98%E8%AF%BB/"><i class="fa  fa-book"></i> 默读</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/11/03/Stolen-Memories-Leveraging-Model-Memorization-for-Calibrated-White-Box-Membership-Inference/"><i class="fa  fa-book"></i> Stolen Memories: Leveraging Model Memorization for Calibrated White-Box Membership Inference</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2019/10/09/Comprehensive-Privacy-Analysis-of-Deep-Learning/"><i class="fa  fa-book"></i> Comprehensive Privacy Analysis of Deep Learning</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2019/02/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/"><i class="fa  fa-book"></i> 越南五日行</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2019/01/27/HEXO%E6%90%AD%E5%BB%BA%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91%EF%BC%88bu/"><i class="fa  fa-book"></i> HEXO搭建踩过的坑（bu</a>
+            
+          
+        
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <li><a target="_blank" rel="nofollow" href="https://weibo.com/u/5676652876"><i class="fa fa-weibo"></i></a></li>
+                        <li><a href="mailto:1914250712@qq.com"><i class="fa fa-envelope"></i></a></li>
+                        
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/shiningquan"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 十柠暄 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by 十柠暄.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+<script async src="/js/candy.min.js"></script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>

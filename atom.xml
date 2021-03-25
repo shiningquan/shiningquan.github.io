@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-24T12:45:01.411Z</updated>
+  <updated>2021-03-25T08:54:01.474Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,104 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>默读</title>
+    <link href="http://example.com/2021/03/25/%E9%BB%98%E8%AF%BB/"/>
+    <id>http://example.com/2021/03/25/%E9%BB%98%E8%AF%BB/</id>
+    <published>2021-03-25T08:51:53.000Z</published>
+    <updated>2021-03-25T08:54:01.474Z</updated>
+    
+    
+    
+    
+    <category term="小说笔记" scheme="http://example.com/categories/%E5%B0%8F%E8%AF%B4%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="耽美" scheme="http://example.com/tags/%E8%80%BD%E7%BE%8E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Stolen Memories: Leveraging Model Memorization for Calibrated White-Box Membership Inference</title>
+    <link href="http://example.com/2020/11/03/Stolen-Memories-Leveraging-Model-Memorization-for-Calibrated-White-Box-Membership-Inference/"/>
+    <id>http://example.com/2020/11/03/Stolen-Memories-Leveraging-Model-Memorization-for-Calibrated-White-Box-Membership-Inference/</id>
+    <published>2020-11-03T11:19:57.000Z</published>
+    <updated>2021-03-25T11:35:15.764Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><h4 id="论文来源"><a href="#论文来源" class="headerlink" title="论文来源"></a>论文来源</h4><p>Klas Leino and Matt Fredrikson. ``Stolen Memories: Leveraging Model Memorization for Calibrated White-Box Membership Inference’’ Proceedings of the 29th USENIX Security Symposium, 2020.</p><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>本文针对白盒设置下的成员推理攻击进行了讨论，首先在线性模型中运用贝叶斯优化进行攻击，进而将攻击思路推广到深度模型中，并提出对攻击的精度进行校准。最后本文对攻击方法进行了防御评估。</p><h1 id="论文要点"><a href="#论文要点" class="headerlink" title="论文要点"></a>论文要点</h1><h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>机器学习的许多应用涉及敏感个人数据的收集和处理，这引起了我们对于隐私的担忧。特别是，将机器学习算法应用于私人训练数据时，生成的模型可能会通过其行为或表示，无意间泄露有关该数据的信息。成员推理攻击旨在确定在用于构建模型的训练集中是否存在给定的数据点。迄今为止，大多数成员推理攻击都遵循影子模型方法，Nasr等人将该方法扩展到白盒设置，但是他们发现将影子模型方法简单扩展到白盒设置不会产生有效的攻击。因此，本文基于这个背景，研究并提出一种有效的白盒成员推理攻击。</p><h4 id="问题陈述"><a href="#问题陈述" class="headerlink" title="问题陈述"></a>问题陈述</h4><p>目前的成员推理攻击方法大多是在黑盒设置下，虽然Nasr等人从目标模型获得激活和梯度信息，并将其作为攻击模型的功能，以此将攻击扩展到白盒设置中。但是他们发现这种简单扩展不会产生有效的攻击，因此他们假设对手已经知道目标模型的训练数据的很大一部分，但这种白盒攻击偏离了大多数针对成员推理的工作所共有的威胁模型。</p><p>因此本文重新审视了白盒成员推理的问题，提出了一种有效的白盒成员推理攻击，这种攻击无需访问目标模型的任何训练数据即可进行操作。并且，本文的分析揭示了对模型中过度拟合如何发生的更深入的了解，即训练数据中存在的特有特征（仅对训练数据具有预测性，而对采样分布没有预测性）通常在训练过程中被编码在模型中。</p><h4 id="威胁模型"><a href="#威胁模型" class="headerlink" title="威胁模型"></a>威胁模型</h4><ul><li><p>本文展示了如何明确识别深度网络中的记忆，并利用它来进行成员推理。成员信息通过目标模型的特有功能泄漏，而训练数据中分布的特征与普通人群中分布的特征不同，这些特征提供了支持或反对成员资格的证据。</p></li><li><p>本文发现可以对攻击进行校准，以增强对肯定推理的信心。</p></li><li><p>本文评估了针对本文攻击方法的常用防御的实用性。</p></li></ul><h4 id="主要贡献"><a href="#主要贡献" class="headerlink" title="主要贡献"></a>主要贡献</h4><ul><li>本文展示了如何明确识别深度网络中的记忆，并利用它来进行成员推理。成员信息通过目标模型的特有功能泄漏，而训练数据中分布的特征与普通人群中分布的特征不同，这些特征提供了支持或反对成员资格的证据。</li><li>本文发现可以对攻击进行校准，以增强对肯定推理的信心。</li><li>本文评估了针对本文攻击方法的常用防御的实用性。</li></ul><h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><p><img src="/.com//intuition.png" alt="图1：两个高斯分布的示例"></p><p>图1展示了两个高斯分布$\eta^{<em>}$和$\hat{\eta}$的示例，其中$\eta^{</em>}$表示普通人群、$\hat{\eta}$表示训练集。如果$x^{\prime}$满足公式1，则我们认为$x^{\prime}$更可能从$\hat{\eta}$中提取，而不是$\eta^{*}$。因此我们可以创建一个分类器来判断$x^{\prime}$是从哪个分布里提取的。</p><p>\begin{equation}<br>    Pr_{\eta^{*}}\left[x^{\prime}\right]&lt;Pr_{\hat{\eta}}\left[x^{\prime}\right]<br>    \end{equation}</p><h4 id="贝叶斯最优成员推理bayes-wb"><a href="#贝叶斯最优成员推理bayes-wb" class="headerlink" title="贝叶斯最优成员推理bayes-wb"></a>贝叶斯最优成员推理bayes-wb</h4><p><strong>攻击假设：</strong></p><ul><li>假设数据符合高斯分布，并且满足朴素贝叶斯假设</li><li>使用经验均值和协方差将训练集建模为高斯分布</li><li>假设目标模型是线性模型</li></ul><p>由上述思想，攻击者可以利用朴素贝叶斯假设进行成员推理攻击，也就是说，攻击者可以将给定标记的$x$的观测概率写作独立观测$x$的每个特征的概率的乘积。公式2给出成员资格的贝叶斯最优预测器。其中攻击模型$m^{y}(x)$被定义为，给出点$(x,y)$属于训练集$S$的概率。</p><p>\begin{equation}<br>m^{y}(x)=\mathcal{\delta}\left(w^{y T} x+b^{y}\right)<br>\end{equation}</p><p>\begin{center}<br>    where $\qquad w^{y}=\frac{\hat{\mu}<em>{y}-\mu</em>{y}^{<em>}}{\sigma^{2}} \qquad b^{y}=\sum_{j} \frac{\mu_{y j}^{</em> 2}-\hat{\mu}<em>{y j}^{2}}{2 \sigma</em>{j}^{2}}$<br>\end{center}</p><p>在现实中，攻击者并不能准确的知道分布$\hat{\mathcal{D}}$和$\mathcal{D}^{<em>}$的参数，但是目标模型$\hat{g}$学习到的权重会对$\hat{\mathcal{D}}$更加敏感，因此攻击者可以使用权重来对有关$\hat{\mathcal{D}}$和$\mathcal{D}^{</em>}$的差异的有用信息进行编码。具体攻击流程如下：</p><ul><li>在辅助数据上训练代理模型。</li><li>将代理模型的权重与目标模型的权重进行比较，以创建攻击模型。</li><li>将样本点$(x,y)$输入攻击模型，模型会给出判断结果。因为在目标模型中使用的特征与在代理模型中使用的特征不同，因此它可以用于确定成员资格。</li></ul><h4 id="任意分布成员推理general-wb"><a href="#任意分布成员推理general-wb" class="headerlink" title="任意分布成员推理general-wb"></a>任意分布成员推理general-wb</h4><p><img src="/.com//attack_model.png" alt="图2：通用攻击模型的说明"></p><p>bayes-wb攻击通过测量目标模型的权重与代理模型所近似的真实分布的理想权重之间的某种位移来加权成员预测。因此本文定义了一个位移函数$d_f$，将其逐元素应用于模型的权重，这样可以将bayes-wb应用到任意分布中。在高斯朴素贝叶斯假设下，逐元素减法（即$d_f (x,y)=x-y$）是进行成员推理的最佳选择，但对于其他分布而言，不同的位移函数可能更合适。</p><p>图2显示了general-wb的模型，将学习到的位移函数$d_f$逐元素应用于目标和代理模型的权重，以生成攻击模型权重$W$，同时也应用于目标和代理模型的偏置，以生成攻击模型的偏置$b$。然后，使用$W$和$x$的内积进行成员预测。</p><h4 id="深度模型中的成员推理"><a href="#深度模型中的成员推理" class="headerlink" title="深度模型中的成员推理"></a>深度模型中的成员推理</h4><p>我们可以将上述思想应用于深度网络的各个层中，但是在这之前我们需要将网络分解为两个函数，即$f=g \circ h$。其中，$h$计算特征，$g$使用这些特征进行分类。</p><p>对于网络顶层，$g$是一个线性模型，可以直接应用上述算法。对于网络中低层，$g$不再是线性的，但是我们可以通过局部线性近似来将$g$近似为线性的，然后应用上述算法，如图3。</p><p><img src="/.com//linear.png" alt="图3：局部线性近似"></p><p>由于模型的内部表示在各层之间并不是独立的，因此我们不能简单地将每一层的近似权重串联起来，并将其视为对单个模型的攻击。相对的，我们可以使用一个元模型，该模型学习如何组合各个分层攻击的逻辑输出。</p><h1 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h1><h4 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h4><p>攻击的准确度是指$\mathcal{A}$的预测等于$b$的概率。由于攻击者随机猜测可以达到50％的准确度，因此我们通常选择描述攻击的优势，即公式2给出的。优势将准确度缩放到基线的50％，以得出介于-1和1的值。</p><p>\begin{equation}<br>advantage(\mathcal{A})=2Pr[\mathcal{A}((x, y), aux(\hat{g}))=b]-1<br>\end{equation}</p><p>如果对手可以自信地识别出任何数据点，就会发生侵犯隐私的行为，这样造成的威胁要比攻击者以较低的信心识别每个训练人员所造成的威胁大得多。因此，我们还将精度（等式3）视为攻击者的关键目标。为了使攻击者能够得出可靠的推论，精度必须明显大于1/2。如果没有点被预测为成员，则将精度定义为1/2。</p><p>\begin{equation}<br>precision(\mathcal{A})=Pr[b=1 \mid \mathcal{A}((x, y), aux(\hat{g}))=1]<br>\end{equation}</p><p>最后，召回率（等式4）也是一项评估指标。但是，我们对这个指标的重视程度较低，因为如果无法在任何点上返回可信的推断，则具有较高召回率的攻击在实践中不一定有效。</p><p>\begin{equation}<br>recall(\mathcal{A})=Pr[\mathcal{A}((x, y), aux(\hat{g}))=1 \mid b=1]<br>\end{equation}</p><h4 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h4><p>本文针对合成数据和源自真实数据的九个分类数据集进行了实验。通常，从医学和金融等领域选择数据集，本文为了便于与以前的工作进行比较，还包括了三个常见的图像数据集（MNIST，CIFAR10和CIFAR100）。</p><p>合成数据集具有10个类别，75个要素，数据记录量分别为400、800或1600，每类具有相等数量的记录。合成数据的特征是从多元高斯分布中随机抽取的。</p><p>分类数据集包含，成年人，Pima糖尿病；威斯康星州乳腺癌，肝炎，德国信贷，LFW；MNIST，CIFAR10和CIFAR100。图4显示了每个数据集的特征。</p><p><img src="/.com//data.png" alt="图4：实验中使用的数据集"></p><h4 id="评估结果"><a href="#评估结果" class="headerlink" title="评估结果"></a>评估结果</h4><p>在评估每种攻击时，本文将数据随机分为三个不相交的组：训练，测试和保持。训练组和测试组各占实例总数的四分之一，而保留组则占实例总数的剩余一半。目标模型在训练组上进行了训练，而攻击者只允许使用保留组，在训练组（成员）和测试组（非成员）上评估了攻击模型的预测，每个实验在数据拆分的不同随机采样上重复10次，并取平均值。</p><p>在整个评估过程中，我们评估了四种不同的攻击：天真，bayes-wb，general-wb和shadow-bb。天真的攻击是指，当且仅当x正确分类时，攻击模型才能预测实例x是训练集的成员。shadow-bb是指黑盒阴影模型攻击。</p><p>我们可以将无所不知的攻击视为对高斯朴素贝叶斯数据进行白盒攻击的预期准确性的上限，因为这是真正的贝叶斯最优攻击。本文的攻击平均获得了全知攻击的84％的优势，这表明代理模型能够根据需要大致捕获总体分布，以检测目标模型对特征的特质使用。</p><p>当代表位移函数的神经网络被赋予足够的能力来重现bayes-wb攻击时，general-wb平均恢复了bayes-wb攻击优势的94％。通过检查位移网络的权重，我们发现general-wb几乎精确地学习了逐元素减法，这表明了其学习最佳位移函数的潜力。如果容量过大，则general-wb攻击的性能仅会稍差一些，平均可达到最低general-wb攻击优势的92％（Bayes-wb的86％），这表明General-wb不太容易过度拟合。</p><p>当然，我们发现这种模式对于现实世界的数据集也同样有效。在攻击真实数据集Adult时，我们观察到，随着更多数据可用于训练，攻击的优势逐渐减弱，但这个优势在整个数据集上变化得很小（\textless4％）。这可能表明Adult数据集足够大，可以通过标准训练获得的中等大小的MLP模型来防止任何重大的信息泄漏。</p><h1 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h1><h4 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h4><p>Milad Nasr, Reza Shokri, and Amir Houmansadr. Comprehensive    privacy analysis of deep learning: Stand-alone and    federated learning under passive and active white-box inference    attacks. CoRR, abs/1812.00910, 2018.</p><p>Reza Shokri, Marco Stronati, and Vitaly Shmatikov. Membership inference attacks against machine learning models. CoRR, abs/1610.05820, 2016.</p><h4 id="启示"><a href="#启示" class="headerlink" title="启示"></a>启示</h4><p>相对于先前的工作，这篇论文改进的地方是用到了模型内部的信息，可以让攻击者对自己推理结果更加有信心，但他仍然有影子模型的思想在里面。本文中提到每个类别可能具有不同的均值，因此必须使用单独的标准来将它们区分开，但是作者直接假定为对手提供了真实的类别标签，所以没有在这个地方多做说明，而我认为我可以在我的工作中利用这一点，因为我想要推理出来的是一个类。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;基本信息&quot;&gt;&lt;a href=&quot;#基本信息&quot; class=&quot;headerlink&quot; title=&quot;基本信息&quot;&gt;&lt;/a&gt;基本信息&lt;/h1&gt;&lt;h4 id=&quot;论文来源&quot;&gt;&lt;a href=&quot;#论文来源&quot; class=&quot;headerlink&quot; title=&quot;论文来源&quot;&gt;&lt;/a</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="http://example.com/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Membership Inference" scheme="http://example.com/tags/Membership-Inference/"/>
+    
+    <category term="USNIX" scheme="http://example.com/tags/USNIX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Comprehensive Privacy Analysis of Deep Learning</title>
+    <link href="http://example.com/2019/10/09/Comprehensive-Privacy-Analysis-of-Deep-Learning/"/>
+    <id>http://example.com/2019/10/09/Comprehensive-Privacy-Analysis-of-Deep-Learning/</id>
+    <published>2019-10-09T10:58:34.000Z</published>
+    <updated>2021-03-25T11:05:56.607Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="论文信息"><a href="#论文信息" class="headerlink" title="论文信息"></a>论文信息</h1><p>标题：Comprehensive Privacy Analysis of Deep Learning</p><p>作者：Milad Nasr, Reza Shokri, Amir Houmansadr</p><p>出处：S&amp;P</p><p>年份：2019</p><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文对深度学习模型上的白盒隐私推理攻击进行了详细的分析。本文针对被动和主动推理攻击这，在独立和联合设置下设计攻击，并假设对手具有不同的先验知识，证明了即使是通用化的模型也极易受到白盒成员推理攻击的影响。</p><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><p>许多应用程序和服务在大范围（且可能敏感）的用户数据上使用深度学习算法，其中包括用户语音，图像以及医疗，财务，社交和位置数据点。</p><h4 id="问题陈述"><a href="#问题陈述" class="headerlink" title="问题陈述"></a>问题陈述</h4><p>提出问题：深度学习算法对于单个训练数据样本的信息泄露量是多少？</p><p>定义对于目标训练数据记录的一个模型的敏感隐私泄露为：攻击者可以推理出的关于数据记录的信息，并且不能由未使用该训练数据的相似模型推理得出。</p><h1 id="价值"><a href="#价值" class="headerlink" title="价值"></a>价值</h1><h4 id="论文贡献"><a href="#论文贡献" class="headerlink" title="论文贡献"></a>论文贡献</h4><p>本文提供了一个使用白盒成员推理攻击进行深度神经网络隐私分析的综合框架，并且从以下方面对该框架进行了评估：独立/联合设置；攻击完美训练/进行了微调的模型；无监督攻击；被动/主动推理攻击。</p><p>证明了即使是通用化的模型也极易受到白盒成员推理攻击的影响；即使使用预先训练的最先进的目标模型，攻击仍然有效。</p><h4 id="论文弱点"><a href="#论文弱点" class="headerlink" title="论文弱点"></a>论文弱点</h4><p>本文只针对论文中提出的攻击方法进行了详细描述和评估，通过实验结果可以看到攻击的准确率几乎都在70%及以上。本文在文章最后提到了差分隐私，说差分隐私是一个强大的防御方法，但是又说本文的攻击者可以通过观察参数来推理大量的私人信息，并不清楚差分隐私能不能防御本文的攻击方法。</p><h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><h4 id="技术依据"><a href="#技术依据" class="headerlink" title="技术依据"></a>技术依据</h4><p>深度神经网络会记住有关其训练数据的信息，因此容易受到推理攻击。并且在白盒背景下，攻击者可以获取模型（包括模型参数），进而可以计算每一层的输出，梯度还有损失。</p><p>本文利用随机梯度下降（SGD）算法的隐私漏洞来设计白盒推理攻击。因为为了最大程度的减少模型的预期损失，SGD算法会在整个训练数据集的损失梯度趋于零的方向上反复更新模型参数。因此，每个训练数据样本都会在模型参数上的损失函数的局部梯度上留下明显的足迹。</p><p>攻击者利用这些可以获取的信息进行攻击，并且评估在各种场景下的训练数据泄露程度。</p><h4 id="方案框架"><a href="#方案框架" class="headerlink" title="方案框架"></a>方案框架</h4><p>给定目标数据(x,y)，攻击者在目标输入x上运行目标模型f，计算所有隐藏层、模型输出和损失函数。攻击者还会在反向传播时计算相对于每个层的参数的损耗梯度。这些计算构成了推理攻击的输入特征。</p><p>攻击模型由卷积神经网络(CNN)和全连接网络组成(FCN)，攻击者对每个攻击特征观察多次，并在将它们传递到相应的攻击组件之前对其进行堆叠。CNN和FCN组件的输出附加到一起，并且此向量传递到完全连接的编码器，利用编码器和多个隐藏层来组合所有攻击特征提取组件的输出。编码器的输出是单个分数，即攻击的输出，预测了输入数据的隶属概率。</p><p><img src="/.com//1.png" alt="1"></p><h1 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h1><h4 id="评价标准"><a href="#评价标准" class="headerlink" title="评价标准"></a>评价标准</h4><p>Attack accuracy：对于一个未知的数据点的正确的成员资格预测的分数</p><p>True/False positive：True positive代表本来是成员，分类成成员；False positive代表本来不是成员，分类成成员</p><p>Prediction uncertainty：使用对于给定输入的预测向量的归一化熵来计算</p><h4 id="评估结果"><a href="#评估结果" class="headerlink" title="评估结果"></a>评估结果</h4><p><strong>场景1：</strong>独立学习；攻击完美训练的模型；CIFAR100</p><p>证明了模型最后一层的输出泄露的成员信息最多；相对于模型输出来说，梯度会泄露更多的成员信息；相较于模型的其它层，最后一层的梯度泄露更多的成员信息；训练集大小、成员和非成员的比例将影响攻击准确性；成员的梯度范式随着训练周期下降；拥有高预测不准确性的类会泄露更多成员信息。</p><p><strong>场景2：</strong>独立学习；无监督攻击；CIFAR100，Texas100，Purchase100</p><p>从实验结果来看，本文的攻击在当前场景下提供了很高的攻击准确度</p><p><strong>场景3：</strong>独立学习；攻击微调（为了更好的训练准确度）模型</p><p>攻击者可以区分成员（分别在训练模型的数据集里和训练微调模型的数据集里）和非成员，还可以区分两个数据集的成员。</p><p><strong>场景4：</strong>联邦学习；被动推理攻击（默默观察）</p><p>被动全局攻击者（参数聚合器）。对于CIFAR100数据集，达到了一个较高的准确度，但是对于Texas100和Purchase100，与独立学习相比准确度下降。</p><p>被动本地攻击者（学习参与者）。相较于全局攻击，准确度低，因为只能观察聚合之后的参数更新，限制了信息泄露。</p><p><strong>场景5：</strong>联邦学习；主动推理攻击（会攻击性的修改参数更新）</p><p>梯度上升攻击：相较被动全局攻击，主动全局攻击获得更高的准确度。本地攻击的准确度低于全局攻击。</p><p>孤立攻击：攻击者隔离目标参与者和其学习进程。隔离之后目标参与者的模型不会进行聚合，并且存储了很多信息。</p><p>仅仅运用孤立，攻击准确度上升。将梯度上升和孤立合起来运用，攻击准确度进一步提高。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;论文信息&quot;&gt;&lt;a href=&quot;#论文信息&quot; class=&quot;headerlink&quot; title=&quot;论文信息&quot;&gt;&lt;/a&gt;论文信息&lt;/h1&gt;&lt;p&gt;标题：Comprehensive Privacy Analysis of Deep Learning&lt;/p&gt;
+&lt;p&gt;作者：M</summary>
+      
+    
+    
+    
+    <category term="论文笔记" scheme="http://example.com/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="S&amp;P" scheme="http://example.com/tags/S-P/"/>
+    
+    <category term="Membership Inference" scheme="http://example.com/tags/Membership-Inference/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>越南五日行</title>
+    <link href="http://example.com/2019/02/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/"/>
+    <id>http://example.com/2019/02/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/</id>
+    <published>2019-02-05T12:45:17.000Z</published>
+    <updated>2021-03-25T08:52:29.309Z</updated>
+    
+    <content type="html"><![CDATA[<p>写在前面的话：</p><p>千万千万别坐红眼航班，呜呜呜太难受了，好好的睡觉时间要在飞机上度过*(:з」∠)*</p><p>在办落地签的那个地方（也就是下飞机后过关以前）买电话卡的话，七天无限流量20万越南盾，十天无限流量本地通话100分钟22万越南盾。一般换算是1元人民币3000越南盾</p><p>出国游最好手机上下一个google地图，高德在国外没有用的！</p><p>👇多图预警，依然是想到什么再补充</p><h1 id="DAY1"><a href="#DAY1" class="headerlink" title="DAY1"></a>DAY1</h1><p>越南时间凌晨飞机降落在胡志明市，办签证过海关入境，乘车去酒店，零零碎碎收拾一下最后快三点才睡下</p><p>七点起床收拾退房吃早餐，八点半出发四个小时车程到美奈o(╥﹏╥)o蓝天白云真好看</p><p>仙女溪→红沙丘，全程吃沙，不过踩着细沙还蛮舒服哒</p><p>晚餐自行解决，结果就是我们走了将近半小时找一个美团上的餐厅没找到，返回的路上看见了乐天，进去逛了一圈。最后在酒店旁边一个类似大排档的地方吃了，敲好吃哒，因为语言不通老板还给我们降价了*(:з」∠)*美奈人民真朴实</p><p><img src="/.com//DSC01029.jpg" alt="DSC01029"></p><p><img src="/.com//DSC01033.jpg" alt="DSC01033"></p><p><img src="/.com//DSC01042.jpg" alt="DSC01042"></p><p><img src="/.com//TIM%E5%9B%BE%E7%89%8720190205214825.jpg" alt="TIM图片20190205214825"></p><p><img src="/.com//TIM%E5%9B%BE%E7%89%8720190205215233.jpg" alt="TIM图片20190205215233"></p><h1 id="DAY2"><a href="#DAY2" class="headerlink" title="DAY2"></a>DAY2</h1><p>上午去的白石丘，沙地摩托真的刺激！将近90度的坡俯冲下去的一瞬间，叫都叫不出来只敢把眼睛闭着，抱紧越南小哥哥的腰*(:з」∠)*</p><p>刺激完后又是四个小时的车程去芽庄，占婆塔→五指岩</p><p>甘蔗汁很甜，五指岩对面有个川菜馆……晚上住的是超大海景房，落地玻璃窗，自带滤镜</p><p><img src="/.com//DSC01057.jpg" alt="DSC01057"></p><p><img src="/.com//DSC01060.jpg" alt="DSC01060"></p><p><img src="/.com//DSC01077.jpg" alt="DSC01077"></p><p><img src="/.com//TIM%E5%9B%BE%E7%89%8720190205214802.jpg" alt="TIM图片20190205214802"></p><h1 id="DAY3"><a href="#DAY3" class="headerlink" title="DAY3"></a>DAY3</h1><p>今天是海岛一日游！水真的很清，玻璃窗以后不会再坐了，玻璃没擦干净，而且没几条鱼。体验了飞伞，超爽哒！</p><p>上岸之后体验泥浆浴，感觉是兑了水的，泡泥浆浴最好穿次一些的泳衣，最好是那种准备扔了的泳衣。因为泡完之后泳衣上也会有很多泥浆，出门在外又不好洗，很烦</p><p><img src="/.com//DSC01081.jpg" alt="DSC01081"></p><h1 id="DAY4"><a href="#DAY4" class="headerlink" title="DAY4"></a>DAY4</h1><p>逛购物店的一天……</p><p>本来说有个网红冰激凌，结果人家因为春节关门休息了，最后我吃的是和路雪巧克力味甜筒……</p><p>不过晚饭恰的是瓦片烤肉，很棒！很满足！</p><p>PS：感觉越南人的心算有点堪忧啊，饮料需要自己点，结果服务员算了好久，好在可以用中文和她交流，不然得疯</p><p><img src="/.com//TIM%E5%9B%BE%E7%89%8720190205215222.jpg" alt="TIM图片20190205215222"></p><h1 id="DAY5"><a href="#DAY5" class="headerlink" title="DAY5"></a>DAY5</h1><p>又是早起的一天，四点不到起床收拾赶飞机，又到胡志明，参观了红教堂、百年邮局、歌剧院、市政厅，喝了咖啡，吃完饭之后就是自由行啦！</p><p>美术馆是个拍照的好地方，可我真不喜欢拍照呀QAQ求放过</p><p>范五老街不是老街，这人就叫范五老*(:з」∠)*，在这条街上找到一个吃越南菜的地方，好吃到哭，人均换算成人民币50-60r的样子，也还好对吧</p><p>自由行是真滴快乐，嘿嘿嘿</p><p><img src="/.com//DSC01093.jpg" alt="DSC01093"></p><p><img src="/.com//TIM%E5%9B%BE%E7%89%8720190205214733.jpg" alt="TIM图片20190205214733"></p><p><img src="/.com//TIM%E5%9B%BE%E7%89%8720190205214814.jpg" alt="TIM图片20190205214814"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;写在前面的话：&lt;/p&gt;
+&lt;p&gt;千万千万别坐红眼航班，呜呜呜太难受了，好好的睡觉时间要在飞机上度过*(:з」∠)*&lt;/p&gt;
+&lt;p&gt;在办落地签的那个地方（也就是下飞机后过关以前）买电话卡的话，七天无限流量20万越南盾，十天无限流量本地通话100分钟22万越南盾。一般换算是1元人</summary>
+      
+    
+    
+    
+    <category term="游记" scheme="http://example.com/categories/%E6%B8%B8%E8%AE%B0/"/>
+    
+    
+    <category term="越南" scheme="http://example.com/tags/%E8%B6%8A%E5%8D%97/"/>
+    
+    <category term="游记" scheme="http://example.com/tags/%E6%B8%B8%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>HEXO搭建踩过的坑（bu</title>
@@ -97,34 +195,6 @@
     <category term="Markdown" scheme="http://example.com/tags/Markdown/"/>
     
     <category term="Typora" scheme="http://example.com/tags/Typora/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>越南五日行</title>
-    <link href="http://example.com/2018/12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/"/>
-    <id>http://example.com/2018/12/05/%E8%B6%8A%E5%8D%97%E4%BA%94%E6%97%A5%E8%A1%8C/</id>
-    <published>2018-12-05T12:45:17.000Z</published>
-    <updated>2021-03-25T08:33:55.789Z</updated>
-    
-    <content type="html"><![CDATA[<p>写在前面的话：</p><p>千万千万别坐红眼航班，呜呜呜太难受了，好好的睡觉时间要在飞机上度过*(:з」∠)*</p><p>在办落地签的那个地方（也就是下飞机后过关以前）买电话卡的话，七天无限流量20万越南盾，十天无限流量本地通话100分钟22万越南盾。一般换算是1元人民币3000越南盾</p><p>出国游最好手机上下一个google地图，高德在国外没有用的！</p><p>👇多图预警，依然是想到什么再补充</p><h1 id="DAY1"><a href="#DAY1" class="headerlink" title="DAY1"></a>DAY1</h1><p>越南时间凌晨飞机降落在胡志明市，办签证过海关入境，乘车去酒店，零零碎碎收拾一下最后快三点才睡下</p><p>七点起床收拾退房吃早餐，八点半出发四个小时车程到美奈o(╥﹏╥)o蓝天白云真好看</p><p>仙女溪→红沙丘，全程吃沙，不过踩着细沙还蛮舒服哒</p><p>晚餐自行解决，结果就是我们走了将近半小时找一个美团上的餐厅没找到，返回的路上看见了乐天，进去逛了一圈。最后在酒店旁边一个类似大排档的地方吃了，敲好吃哒，因为语言不通老板还给我们降价了*(:з」∠)*美奈人民真朴实</p><p><img src="/.com//DSC01029.jpg" alt="DSC01029"></p><p><img src="/.com//DSC01033.jpg" alt="DSC01033"></p><p><img src="/.com//DSC01042.jpg" alt="DSC01042"></p><p><img src="/.com//TIM%E5%9B%BE%E7%89%8720190205214825.jpg" alt="TIM图片20190205214825"></p><p><img src="/.com//TIM%E5%9B%BE%E7%89%8720190205215233.jpg" alt="TIM图片20190205215233"></p><h1 id="DAY2"><a href="#DAY2" class="headerlink" title="DAY2"></a>DAY2</h1><p>上午去的白石丘，沙地摩托真的刺激！将近90度的坡俯冲下去的一瞬间，叫都叫不出来只敢把眼睛闭着，抱紧越南小哥哥的腰*(:з」∠)*</p><p>刺激完后又是四个小时的车程去芽庄，占婆塔→五指岩</p><p>甘蔗汁很甜，五指岩对面有个川菜馆……晚上住的是超大海景房，落地玻璃窗，自带滤镜</p><p><img src="/.com//DSC01057.jpg" alt="DSC01057"></p><p><img src="/.com//DSC01060.jpg" alt="DSC01060"></p><p><img src="/.com//DSC01077.jpg" alt="DSC01077"></p><p><img src="/.com//TIM%E5%9B%BE%E7%89%8720190205214802.jpg" alt="TIM图片20190205214802"></p><h1 id="DAY3"><a href="#DAY3" class="headerlink" title="DAY3"></a>DAY3</h1><p>今天是海岛一日游！水真的很清，玻璃窗以后不会再坐了，玻璃没擦干净，而且没几条鱼。体验了飞伞，超爽哒！</p><p>上岸之后体验泥浆浴，感觉是兑了水的，泡泥浆浴最好穿次一些的泳衣，最好是那种准备扔了的泳衣。因为泡完之后泳衣上也会有很多泥浆，出门在外又不好洗，很烦</p><p><img src="/.com//DSC01081.jpg" alt="DSC01081"></p><h1 id="DAY4"><a href="#DAY4" class="headerlink" title="DAY4"></a>DAY4</h1><p>逛购物店的一天……</p><p>本来说有个网红冰激凌，结果人家因为春节关门休息了，最后我吃的是和路雪巧克力味甜筒……</p><p>不过晚饭恰的是瓦片烤肉，很棒！很满足！</p><p>PS：感觉越南人的心算有点堪忧啊，饮料需要自己点，结果服务员算了好久，好在可以用中文和她交流，不然得疯</p><p><img src="/.com//TIM%E5%9B%BE%E7%89%8720190205215222.jpg" alt="TIM图片20190205215222"></p><h1 id="DAY5"><a href="#DAY5" class="headerlink" title="DAY5"></a>DAY5</h1><p>又是早起的一天，四点不到起床收拾赶飞机，又到胡志明，参观了红教堂、百年邮局、歌剧院、市政厅，喝了咖啡，吃完饭之后就是自由行啦！</p><p>美术馆是个拍照的好地方，可我真不喜欢拍照呀QAQ求放过</p><p>范五老街不是老街，这人就叫范五老*(:з」∠)*，在这条街上找到一个吃越南菜的地方，好吃到哭，人均换算成人民币50-60r的样子，也还好对吧</p><p>自由行是真滴快乐，嘿嘿嘿</p><p><img src="/.com//DSC01093.jpg" alt="DSC01093"></p><p><img src="/.com//TIM%E5%9B%BE%E7%89%8720190205214733.jpg" alt="TIM图片20190205214733"></p><p><img src="/.com//TIM%E5%9B%BE%E7%89%8720190205214814.jpg" alt="TIM图片20190205214814"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;写在前面的话：&lt;/p&gt;
-&lt;p&gt;千万千万别坐红眼航班，呜呜呜太难受了，好好的睡觉时间要在飞机上度过*(:з」∠)*&lt;/p&gt;
-&lt;p&gt;在办落地签的那个地方（也就是下飞机后过关以前）买电话卡的话，七天无限流量20万越南盾，十天无限流量本地通话100分钟22万越南盾。一般换算是1元人</summary>
-      
-    
-    
-    
-    <category term="游记" scheme="http://example.com/categories/%E6%B8%B8%E8%AE%B0/"/>
-    
-    
-    <category term="越南" scheme="http://example.com/tags/%E8%B6%8A%E5%8D%97/"/>
-    
-    <category term="游记" scheme="http://example.com/tags/%E6%B8%B8%E8%AE%B0/"/>
     
   </entry>
   
